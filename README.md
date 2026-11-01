@@ -17,17 +17,18 @@ Content bank me **60 posts** hain (40 vocabulary + 20 sentences). Yeh lagbhag 2 
 
 ### Step 1: Meta app aur Instagram token
 
-Aapka account Professional hai, isliye **"Instagram API with Instagram Login"** use hoga. Isme Facebook Page ki zarurat nahi.
+Naye Meta apps me **"API setup with Unified login"** use hota hai. Isme Facebook Page ki zarurat nahi, bas ek (free) Business portfolio chahiye.
 
-1. https://developers.facebook.com par jaakar login karein, phir **My Apps → Create App**.
-2. Use case me **"Manage messaging & content on Instagram"** chunein. App ka naam kuch bhi rakh sakte hain, jaise `daily-english-autopost`.
-3. App dashboard me **Instagram → API setup with Instagram login** kholein.
-4. **"Generate access tokens"** section me **Add account** dabayein aur `daily.english.line` se login karke permission dein.
-   - Agar tester invite maange: Instagram app me **Settings → Website permissions/Apps and websites → Tester invites** me jaakar accept karein.
-5. Account ke saamne **Generate token** dabayein aur token copy karein. Yeh **long-lived token** hai, 60 din chalta hai.
-   Permissions me `instagram_business_basic` aur `instagram_business_content_publish` hone chahiye.
+1. https://developers.facebook.com par Facebook se login karein, phir **My Apps → Create App**.
+   Use case **"Manage messaging & content on Instagram"** chunein. Business portfolio wale step me "abhi nahi" chun sakte hain.
+2. **Use cases → Customize → API setup with Unified login** kholein. Business portfolio maange to apna portfolio connect karein.
+3. **App roles → Roles → Add People → Instagram Tester** me `daily.english.line` add karein.
+   Phir https://www.instagram.com/accounts/manage_access/ par **Tester Invites** me jaakar **Accept** karein.
+4. Step 1 me **Create new configuration** banayein: System-user access token, Expiration **Never**, asset `daily.english.line`, permissions me `instagram_basic` + `instagram_content_publish`.
+5. Step 2 **Generate access tokens** me account ke saamne **Generate token** dabayein aur token copy karein (`EAA…`). Yeh token **expire nahi hota**.
 
-> Meta dashboard ke button ke naam kabhi-kabhi badal jaate hain. Agar kuch alag dikhe to "Instagram API with Instagram Login" wala section dhoondhein.
+> Meta dashboard ke button ke naam kabhi-kabhi badal jaate hain. Code dono tarah ke token chala leta hai: purana "Instagram login" wala (`IG…`) aur naya "Unified login" wala (`EAA…`).
+> Kisi aur Instagram account ke liye `IG_USER_ID` secret me us account ki ID daalein (Generate access tokens section me username ke neeche dikhti hai).
 
 > ⚠️ Token password jaisa hai. Ise kisi ko na bhejein aur code me na likhein. Sirf GitHub Secret me daalein (Step 3).
 
@@ -43,13 +44,10 @@ Repo me **Settings → Secrets and variables → Actions → New repository secr
 
 | Name | Value |
 |---|---|
-| `IG_ACCESS_TOKEN` | Step 1 wala Instagram token |
-| `GH_PAT` *(optional, recommended)* | Token apne aap refresh karne ke liye (neeche dekhein) |
+| `IG_ACCESS_TOKEN` | Step 1 wala token |
 
-**GH_PAT kyon?** Instagram token 60 din me expire hota hai. `GH_PAT` hoga to workflow roz token refresh karke secret update kar dega, aur aapko kuch nahi karna padega.
-Banane ka tarika: GitHub → **Settings → Developer settings → Fine-grained tokens → Generate new token**.
-Usme sirf is repo ko select karein, permission **Secrets: Read and write** dein, aur expiry 1 saal rakhein.
-`GH_PAT` nahi daala to har ~50 din me Step 1 se naya token banakar `IG_ACCESS_TOKEN` update karna padega.
+Unified login wala (`EAA…`) token expire nahi hota, isliye aur kuch nahi chahiye.
+(Sirf purane "Instagram login" wale `IG…` token ke liye, jo 60 din me expire hota hai: `GH_PAT` secret daalne par workflow use roz refresh kar deta hai. Iske liye fine-grained token chahiye jisme is repo par **Secrets: Read and write** permission ho.)
 
 ### Step 4: Test karein
 
@@ -73,7 +71,7 @@ Iske baad roz 7 baje apne aap post hoga. GitHub ke schedule kabhi-kabhi 5–30 m
 - **Content khatam hone par** workflow fail hoga aur GitHub aapko email karega. Tab naye posts add kar dein.
 - **Koi post skip/repeat karna:** `state.json` me `next_index` badlein. Yeh 0 se shuru hota hai, yaani Day 1 = 0.
 - **Time badalna:** `.github/workflows/daily-post.yml` me `cron` badlein. Time UTC me hota hai: IST − 5:30. Jaise subah 9 baje IST = `30 3 * * *`.
-- **Post fail hua?** Actions tab me red ❌ run kholkar error padhein. Sabse common wajah expired token hoti hai, uske liye Step 1 dobara karein.
+- **Post fail hua?** Actions tab me red ❌ run kholkar error padhein. Sabse common wajah token ya permission ki galti hoti hai, uske liye Step 1 dobara check karein.
 
 ## Local preview (optional)
 

@@ -63,6 +63,7 @@ jobs:
         if: env.DRY_RUN != 'true'
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
           sleep 10
           python scripts/autopost.py publish \
@@ -85,5 +86,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           python scripts/autopost.py refresh --out "$RUNNER_TEMP/ig_token"
-          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" < "$RUNNER_TEMP/ig_token"
+          if [ -s "$RUNNER_TEMP/ig_token" ]; then
+            gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" < "$RUNNER_TEMP/ig_token"
+          fi
           rm -f "$RUNNER_TEMP/ig_token"

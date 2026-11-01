@@ -22,8 +22,13 @@ STATE_FILE = ROOT / "state.json"
 TEMPLATE_FILE = ROOT / "template" / "post.html"
 IMAGES_DIR = ROOT / "images"
 
-GRAPH = "https://graph.instagram.com"
+# Tokens from "Instagram login" start with "IG" and use graph.instagram.com. Tokens from
+# "Unified login" (Facebook Login for Business, e.g. a never-expiring system-user token)
+# use graph.facebook.com and need the Instagram account's ID.
+IG_GRAPH = "https://graph.instagram.com"
+FB_GRAPH = "https://graph.facebook.com"
 API_VERSION = os.environ.get("IG_API_VERSION", "v23.0")
+IG_USER_ID = os.environ.get("IG_USER_ID") or "17841435978873343"  # @daily.english.line
 HANDLE = "@daily.english.line"
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -219,9 +224,14 @@ def build_caption(index, post, prev=None):
     return "\n\n".join(parts)
 
 
+def is_instagram_login_token(token):
+    return token.startswith("IG")
+
+
 def api(method, path, token, **params):
     params["access_token"] = token
-    url = f"{GRAPH}/{API_VERSION}/{path}"
+    host = IG_GRAPH if is_instagram_login_token(token) else FB_GRAPH
+    url = f"{host}/{API_VERSION}/{path}"
     resp = requests.request(method, url, params=params if method == "GET" else None,
                             data=params if method != "GET" else None, timeout=60)
     body = resp.json() if resp.content else {}
@@ -239,8 +249,12 @@ def publish(image_url):
     index, post = pick_post(None)
     caption = build_caption(index, post, previous_post(state, load_posts()))
 
-    me = api("GET", "me", token, fields="user_id,username")
-    user_id = me["user_id"]
+    if is_instagram_login_token(token):
+        me = api("GET", "me", token, fields="user_id,username")
+        user_id = me["user_id"]
+    else:
+        user_id = IG_USER_ID
+        me = api("GET", user_id, token, fields="username")
     print(f"Posting as @{me.get('username')} -> post {index + 1}: {post['title_hi']}")
 
     container = api("POST", f"{user_id}/media", token, image_url=image_url, caption=caption)
@@ -274,7 +288,10 @@ def refresh(out_file):
     token = os.environ.get("IG_ACCESS_TOKEN")
     if not token:
         sys.exit("IG_ACCESS_TOKEN set nahi hai.")
-    resp = requests.get(f"{GRAPH}/refresh_access_token",
+    if not is_instagram_login_token(token):
+        print("Unified-login (system-user) token never expires; nothing to refresh.")
+        return
+    resp = requests.get(f"{IG_GRAPH}/refresh_access_token",
                         params={"grant_type": "ig_refresh_token", "access_token": token}, timeout=60)
     body = resp.json()
     if "access_token" not in body:
