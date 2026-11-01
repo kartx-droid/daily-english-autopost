@@ -48,7 +48,7 @@ jobs:
         run: python scripts/autopost.py render
 
       - name: Upload preview
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: post-preview
           path: ${{ steps.render.outputs.image }}
