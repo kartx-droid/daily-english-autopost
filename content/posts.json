@@ -1,0 +1,222 @@
+[
+  {"type": "words", "title_hi": "घर की चीज़ें", "title_en": "Household Items", "items": [
+    ["दरवाज़ा", "Door", "डोर"], ["खिड़की", "Window", "विंडो"], ["पंखा", "Fan", "फ़ैन"], ["पलंग", "Bed", "बेड"], ["तकिया", "Pillow", "पिलो"],
+    ["चादर", "Bedsheet", "बेडशीट"], ["अलमारी", "Cupboard", "कबर्ड"], ["आईना", "Mirror", "मिरर"], ["झाड़ू", "Broom", "ब्रूम"], ["बाल्टी", "Bucket", "बकेट"]]},
+  {"type": "words", "title_hi": "रसोई के बर्तन", "title_en": "Kitchen Utensils", "items": [
+    ["तवा", "Griddle", "ग्रिडल"], ["कड़ाही", "Wok", "वॉक"], ["बेलन", "Rolling pin", "रोलिंग पिन"], ["चिमटा", "Tongs", "टॉन्ग्स"], ["छलनी", "Strainer", "स्ट्रेनर"],
+    ["कलछी", "Ladle", "लैडल"], ["कटोरी", "Bowl", "बाउल"], ["थाली", "Plate", "प्लेट"], ["चाकू", "Knife", "नाइफ़"], ["ढक्कन", "Lid", "लिड"]]},
+  {"type": "sentences", "title_hi": "रोज़ बोले जाने वाले वाक्य", "title_en": "Daily Use Sentences", "items": [
+    ["मैं अभी आता हूँ।", "I'll be right back."], ["जल्दी करो, देर हो रही है।", "Hurry up, we're getting late."],
+    ["मुझे थोड़ा समय दो।", "Give me some time."], ["चिंता मत करो।", "Don't worry."],
+    ["तुम्हें क्या चाहिए?", "What do you need?"], ["मैं समझ गया।", "I got it."],
+    ["थोड़ा धीरे-धीरे बोलिए।", "Please speak a little slowly."], ["कोई बात नहीं।", "It's okay. / No problem."]]},
+  {"type": "words", "title_hi": "शरीर के अंग", "title_en": "Body Parts", "items": [
+    ["माथा", "Forehead", "फ़ोरहेड"], ["भौंह", "Eyebrow", "आईब्रो"], ["पलक", "Eyelid", "आईलिड"], ["गाल", "Cheek", "चीक"], ["ठोड़ी", "Chin", "चिन"],
+    ["गर्दन", "Neck", "नेक"], ["कंधा", "Shoulder", "शोल्डर"], ["कोहनी", "Elbow", "एल्बो"], ["कलाई", "Wrist", "रिस्ट"], ["एड़ी", "Heel", "हील"]]},
+  {"type": "words", "title_hi": "सब्ज़ियों के नाम", "title_en": "Vegetables", "items": [
+    ["भिंडी", "Lady finger", "लेडी फ़िंगर"], ["बैंगन", "Brinjal", "ब्रिंजल"], ["लौकी", "Bottle gourd", "बॉटल गॉर्ड"], ["करेला", "Bitter gourd", "बिटर गॉर्ड"], ["फूलगोभी", "Cauliflower", "कॉलीफ़्लावर"],
+    ["पत्तागोभी", "Cabbage", "कैबेज"], ["मटर", "Peas", "पीज़"], ["शिमला मिर्च", "Capsicum", "कैप्सिकम"], ["मूली", "Radish", "रैडिश"], ["कद्दू", "Pumpkin", "पम्पकिन"]]},
+  {"type": "sentences", "title_hi": "घर पर बोले जाने वाले वाक्य", "title_en": "Sentences at Home", "items": [
+    ["लाइट बंद कर दो।", "Switch off the light."], ["खाना तैयार है।", "Food is ready."],
+    ["दरवाज़ा कौन खटखटा रहा है?", "Who is knocking at the door?"], ["टीवी की आवाज़ कम करो।", "Turn down the TV volume."],
+    ["अपना कमरा साफ़ करो।", "Clean your room."], ["पानी गरम हो गया है।", "The water is hot now."],
+    ["बाहर बारिश हो रही है, छाता ले जाओ।", "It's raining outside, take an umbrella."], ["मेरा चार्जर किसने लिया?", "Who took my charger?"]]},
+  {"type": "words", "title_hi": "फलों के नाम", "title_en": "Fruits", "items": [
+    ["अमरूद", "Guava", "ग्वावा"], ["अनार", "Pomegranate", "पॉमग्रेनेट"], ["पपीता", "Papaya", "पपाया"], ["चीकू", "Sapodilla", "सैपोडिला"], ["शरीफ़ा", "Custard apple", "कस्टर्ड ऐपल"],
+    ["नाशपाती", "Pear", "पेयर"], ["खरबूजा", "Muskmelon", "मस्कमेलन"], ["तरबूज़", "Watermelon", "वॉटरमेलन"], ["जामुन", "Black plum", "ब्लैक प्लम"], ["अंजीर", "Fig", "फ़िग"]]},
+  {"type": "words", "title_hi": "रिश्तों के नाम", "title_en": "Relations", "items": [
+    ["ससुर", "Father-in-law", "फ़ादर-इन-लॉ"], ["सास", "Mother-in-law", "मदर-इन-लॉ"], ["साला", "Brother-in-law", "ब्रदर-इन-लॉ"], ["ननद", "Sister-in-law", "सिस्टर-इन-लॉ"], ["दामाद", "Son-in-law", "सन-इन-लॉ"],
+    ["बहू", "Daughter-in-law", "डॉटर-इन-लॉ"], ["भतीजा", "Nephew", "नेफ़्यू"], ["भतीजी", "Niece", "नीस"], ["पोता", "Grandson", "ग्रैंडसन"], ["सौतेली माँ", "Stepmother", "स्टेपमदर"]]},
+  {"type": "sentences", "title_hi": "ऑफिस में बोले जाने वाले वाक्य", "title_en": "Office Sentences", "items": [
+    ["मीटिंग कितने बजे है?", "What time is the meeting?"], ["मैं आज छुट्टी पर हूँ।", "I am on leave today."],
+    ["यह काम आज ख़त्म करना है।", "This work has to be finished today."], ["क्या आप मुझे यह फ़ाइल भेज सकते हैं?", "Can you send me this file?"],
+    ["मुझे पाँच मिनट देर हो जाएगी।", "I will be five minutes late."], ["बॉस आपको बुला रहे हैं।", "The boss is calling you."],
+    ["मैं इस पर काम कर रहा हूँ।", "I am working on it."], ["चलो, लंच पर चलते हैं।", "Let's go for lunch."]]},
+  {"type": "words", "title_hi": "काम-धंधों के नाम", "title_en": "Professions", "items": [
+    ["दर्ज़ी", "Tailor", "टेलर"], ["नाई", "Barber", "बार्बर"], ["मोची", "Cobbler", "कॉब्लर"], ["बढ़ई", "Carpenter", "कारपेंटर"], ["लोहार", "Blacksmith", "ब्लैकस्मिथ"],
+    ["सुनार", "Goldsmith", "गोल्डस्मिथ"], ["कुम्हार", "Potter", "पॉटर"], ["धोबी", "Washerman", "वॉशरमैन"], ["माली", "Gardener", "गार्डनर"], ["हलवाई", "Confectioner", "कन्फ़ेक्शनर"]]},
+  {"type": "words", "title_hi": "भावनाएँ", "title_en": "Emotions", "items": [
+    ["ख़ुशी", "Happiness", "हैप्पीनेस"], ["दुख", "Sadness", "सैडनेस"], ["गुस्सा", "Anger", "ऐंगर"], ["डर", "Fear", "फ़ियर"], ["जलन", "Jealousy", "जेलसी"],
+    ["शर्म", "Shame", "शेम"], ["हैरानी", "Surprise", "सरप्राइज़"], ["अकेलापन", "Loneliness", "लोनलीनेस"], ["चिंता", "Worry", "वरी"], ["गर्व", "Pride", "प्राइड"]]},
+  {"type": "sentences", "title_hi": "दुकान पर बोले जाने वाले वाक्य", "title_en": "At the Shop", "items": [
+    ["इसकी कीमत क्या है?", "What is the price of this?"], ["थोड़ा कम कर दीजिए।", "Please reduce the price a little."],
+    ["क्या आपके पास छुट्टे हैं?", "Do you have change?"], ["मुझे इसका बड़ा साइज़ चाहिए।", "I need a bigger size of this."],
+    ["क्या मैं इसे पहनकर देख सकता हूँ?", "Can I try this on?"], ["इसे पैक कर दीजिए।", "Please pack it."],
+    ["क्या आप ऑनलाइन पेमेंट लेते हैं?", "Do you accept online payment?"], ["बिल दे दीजिए।", "Please give me the bill."]]},
+  {"type": "words", "title_hi": "मौसम से जुड़े शब्द", "title_en": "Weather Words", "items": [
+    ["धूप", "Sunshine", "सनशाइन"], ["बादल", "Cloud", "क्लाउड"], ["बारिश", "Rain", "रेन"], ["बूँदाबाँदी", "Drizzle", "ड्रिज़ल"], ["आँधी", "Storm", "स्टॉर्म"],
+    ["ओले", "Hail", "हेल"], ["कोहरा", "Fog", "फ़ॉग"], ["ओस", "Dew", "ड्यू"], ["बिजली", "Lightning", "लाइटनिंग"], ["इंद्रधनुष", "Rainbow", "रेनबो"]]},
+  {"type": "words", "title_hi": "स्कूल की चीज़ें", "title_en": "School Things", "items": [
+    ["बस्ता", "School bag", "स्कूल बैग"], ["रबड़", "Eraser", "इरेज़र"], ["पैमाना", "Ruler", "रूलर"], ["कॉपी", "Notebook", "नोटबुक"], ["स्याही", "Ink", "इंक"],
+    ["श्यामपट", "Blackboard", "ब्लैकबोर्ड"], ["परकार", "Compass", "कम्पस"], ["गोंद", "Glue", "ग्लू"], ["चाँदा", "Protractor", "प्रोट्रैक्टर"], ["मेज़", "Desk", "डेस्क"]]},
+  {"type": "sentences", "title_hi": "डॉक्टर के पास", "title_en": "At the Doctor", "items": [
+    ["मुझे दो दिन से बुखार है।", "I have had a fever for two days."], ["मेरे सिर में दर्द है।", "I have a headache."],
+    ["मुझे सर्दी-ज़ुकाम हो गया है।", "I have caught a cold."], ["यह दवाई दिन में कितनी बार लेनी है?", "How many times a day should I take this?"],
+    ["मुझे चक्कर आ रहे हैं।", "I am feeling dizzy."], ["मेरे पेट में दर्द है।", "I have a stomachache."],
+    ["क्या मुझे कोई टेस्ट करवाना होगा?", "Do I need to get any tests done?"], ["मुझे भूख नहीं लगती।", "I have no appetite."]]},
+  {"type": "words", "title_hi": "ऑफिस के शब्द", "title_en": "Office Words", "items": [
+    ["तनख़्वाह", "Salary", "सैलरी"], ["छुट्टी", "Leave", "लीव"], ["इस्तीफ़ा", "Resignation", "रेज़िग्नेशन"], ["पदोन्नति", "Promotion", "प्रमोशन"], ["सहकर्मी", "Colleague", "कलीग"],
+    ["समय-सीमा", "Deadline", "डेडलाइन"], ["हाज़िरी", "Attendance", "अटेंडेंस"], ["वेतन वृद्धि", "Increment", "इन्क्रीमेंट"], ["नियुक्ति", "Appointment", "अपॉइंटमेंट"], ["अनुभव", "Experience", "एक्सपीरियंस"]]},
+  {"type": "words", "title_hi": "ख़रीदारी के शब्द", "title_en": "Shopping Words", "items": [
+    ["छूट", "Discount", "डिस्काउंट"], ["रसीद", "Receipt", "रिसीट"], ["ग्राहक", "Customer", "कस्टमर"], ["दाम", "Price", "प्राइस"], ["छुट्टे पैसे", "Change", "चेंज"],
+    ["सौदा", "Deal", "डील"], ["उधार", "Credit", "क्रेडिट"], ["थोक", "Wholesale", "होलसेल"], ["फुटकर", "Retail", "रीटेल"], ["सामान बदलना", "Exchange", "एक्सचेंज"]]},
+  {"type": "sentences", "title_hi": "फ़ोन पर बात", "title_en": "On the Phone", "items": [
+    ["हैलो, मैं राहुल बोल रहा हूँ।", "Hello, this is Rahul speaking."], ["आपकी आवाज़ साफ़ नहीं आ रही।", "Your voice is not clear."],
+    ["मैं आपको थोड़ी देर में कॉल करता हूँ।", "I'll call you back in a while."], ["क्या मेरी बात शर्मा जी से हो सकती है?", "May I speak to Mr. Sharma?"],
+    ["नेटवर्क की दिक्कत है।", "There is a network problem."], ["लाइन पर बने रहिए।", "Please hold the line."],
+    ["मेरा फ़ोन बंद हो गया था।", "My phone was switched off."], ["मैं मीटिंग में हूँ, बाद में बात करते हैं।", "I'm in a meeting, let's talk later."]]},
+  {"type": "words", "title_hi": "बीमारी और सेहत", "title_en": "Health Words", "items": [
+    ["बुखार", "Fever", "फ़ीवर"], ["खाँसी", "Cough", "कफ़"], ["ज़ुकाम", "Cold", "कोल्ड"], ["चक्कर", "Dizziness", "डिज़ीनेस"], ["सूजन", "Swelling", "स्वेलिंग"],
+    ["घाव", "Wound", "वूंड"], ["मोच", "Sprain", "स्प्रेन"], ["छाला", "Blister", "ब्लिस्टर"], ["खुजली", "Itching", "इचिंग"], ["उल्टी", "Vomiting", "वॉमिटिंग"]]},
+  {"type": "words", "title_hi": "कपड़ों के नाम", "title_en": "Clothes", "items": [
+    ["कमीज़", "Shirt", "शर्ट"], ["पतलून", "Trousers", "ट्राउज़र्स"], ["बनियान", "Vest", "वेस्ट"], ["मोज़े", "Socks", "सॉक्स"], ["दुपट्टा", "Scarf", "स्कार्फ़"],
+    ["रूमाल", "Handkerchief", "हैंडकरचीफ़"], ["टोपी", "Cap", "कैप"], ["दस्ताने", "Gloves", "ग्लव्ज़"], ["पगड़ी", "Turban", "टर्बन"], ["चप्पल", "Slippers", "स्लिपर्स"]]},
+  {"type": "sentences", "title_hi": "सुबह बोले जाने वाले वाक्य", "title_en": "Morning Sentences", "items": [
+    ["उठो, सुबह हो गई।", "Wake up, it's morning."], ["मैंने अलार्म लगाया था पर सुना नहीं।", "I set the alarm but didn't hear it."],
+    ["जल्दी नहा लो।", "Take a bath quickly."], ["नाश्ते में क्या है?", "What's for breakfast?"],
+    ["चाय बन गई है।", "Tea is ready."], ["मुझे आज ऑफिस जल्दी जाना है।", "I have to go to the office early today."],
+    ["अपना टिफ़िन ले जाना मत भूलना।", "Don't forget to take your lunch box."], ["बस छूट जाएगी, जल्दी करो।", "You'll miss the bus, hurry up."]]},
+  {"type": "words", "title_hi": "जानवरों के नाम", "title_en": "Animals", "items": [
+    ["गधा", "Donkey", "डंकी"], ["बकरी", "Goat", "गोट"], ["भेड़", "Sheep", "शीप"], ["ऊँट", "Camel", "कैमल"], ["भालू", "Bear", "बेयर"],
+    ["लोमड़ी", "Fox", "फ़ॉक्स"], ["गिलहरी", "Squirrel", "स्क्विरल"], ["खरगोश", "Rabbit", "रैबिट"], ["हिरण", "Deer", "डियर"], ["गैंडा", "Rhinoceros", "राइनोसेरस"]]},
+  {"type": "words", "title_hi": "पक्षियों के नाम", "title_en": "Birds", "items": [
+    ["कबूतर", "Pigeon", "पिजन"], ["गौरैया", "Sparrow", "स्पैरो"], ["कौआ", "Crow", "क्रो"], ["तोता", "Parrot", "पैरट"], ["मोर", "Peacock", "पीकॉक"],
+    ["उल्लू", "Owl", "आउल"], ["चील", "Kite", "काइट"], ["बत्तख", "Duck", "डक"], ["कोयल", "Cuckoo", "कुकू"], ["बगुला", "Heron", "हेरन"]]},
+  {"type": "sentences", "title_hi": "रात को बोले जाने वाले वाक्य", "title_en": "Night Sentences", "items": [
+    ["खाना खा लिया?", "Have you had dinner?"], ["लाइट बंद करके सो जाओ।", "Turn off the light and go to sleep."],
+    ["मुझे नींद आ रही है।", "I am feeling sleepy."], ["कल सुबह मुझे जल्दी उठा देना।", "Wake me up early tomorrow morning."],
+    ["दरवाज़ा बंद कर दिया?", "Did you lock the door?"], ["फ़ोन चार्जिंग पर लगा दो।", "Put the phone on charge."],
+    ["देर रात तक मत जागो।", "Don't stay up late."], ["शुभ रात्रि, अच्छे सपने देखना।", "Good night, sweet dreams."]]},
+  {"type": "words", "title_hi": "रोज़ के काम", "title_en": "Daily Action Verbs", "items": [
+    ["उठना", "Wake up", "वेक अप"], ["नहाना", "Bathe", "बेद"], ["कपड़े पहनना", "Get dressed", "गेट ड्रेस्ड"], ["पकाना", "Cook", "कुक"], ["धोना", "Wash", "वॉश"],
+    ["सुखाना", "Dry", "ड्राई"], ["प्रेस करना", "Iron", "आयरन"], ["झाड़ू लगाना", "Sweep", "स्वीप"], ["पोंछा लगाना", "Mop", "मॉप"], ["सोना", "Sleep", "स्लीप"]]},
+  {"type": "words", "title_hi": "इंसान का स्वभाव", "title_en": "Personality Words", "items": [
+    ["घमंडी", "Arrogant", "ऐरोगेंट"], ["शर्मीला", "Shy", "शाय"], ["आलसी", "Lazy", "लेज़ी"], ["मेहनती", "Hardworking", "हार्डवर्किंग"], ["ईमानदार", "Honest", "ऑनेस्ट"],
+    ["कंजूस", "Stingy", "स्टिंजी"], ["बातूनी", "Talkative", "टॉकेटिव"], ["ज़िद्दी", "Stubborn", "स्टबर्न"], ["समझदार", "Wise", "वाइज़"], ["मिलनसार", "Friendly", "फ़्रेंडली"]]},
+  {"type": "sentences", "title_hi": "बच्चों से बोले जाने वाले वाक्य", "title_en": "Talking to Kids", "items": [
+    ["होमवर्क कर लिया?", "Have you done your homework?"], ["खिलौने अपनी जगह पर रखो।", "Put the toys back in their place."],
+    ["सब्ज़ी भी खाओ।", "Eat your vegetables too."], ["शोर मत करो।", "Don't make noise."],
+    ["ज़्यादा मोबाइल मत चलाओ।", "Don't use the phone too much."], ["हाथ धोकर खाना खाओ।", "Wash your hands before eating."],
+    ["बहुत अच्छे, शाबाश!", "Very good, well done!"], ["अपने भाई से झगड़ा मत करो।", "Don't fight with your brother."]]},
+  {"type": "words", "title_hi": "मसालों के नाम", "title_en": "Spices", "items": [
+    ["हल्दी", "Turmeric", "टर्मरिक"], ["जीरा", "Cumin", "क्युमिन"], ["धनिया", "Coriander", "कोरिएंडर"], ["इलायची", "Cardamom", "कार्डमम"], ["लौंग", "Clove", "क्लोव"],
+    ["दालचीनी", "Cinnamon", "सिनेमन"], ["काली मिर्च", "Black pepper", "ब्लैक पेपर"], ["सौंफ", "Fennel", "फ़ेनल"], ["मेथी", "Fenugreek", "फ़ेनुग्रीक"], ["राई", "Mustard seeds", "मस्टर्ड सीड्स"]]},
+  {"type": "words", "title_hi": "यात्रा के शब्द", "title_en": "Travel Words", "items": [
+    ["सफ़र", "Journey", "जर्नी"], ["सामान", "Luggage", "लगेज"], ["मंज़िल", "Destination", "डेस्टिनेशन"], ["यात्री", "Passenger", "पैसेंजर"], ["आरक्षण", "Reservation", "रिज़र्वेशन"],
+    ["किराया", "Fare", "फ़ेयर"], ["प्रस्थान", "Departure", "डिपार्चर"], ["आगमन", "Arrival", "अराइवल"], ["देरी", "Delay", "डिले"], ["नक्शा", "Map", "मैप"]]},
+  {"type": "sentences", "title_hi": "दोस्तों से बात", "title_en": "Talking to Friends", "items": [
+    ["बहुत दिनों बाद मिले!", "Long time no see!"], ["आजकल क्या चल रहा है?", "What's going on these days?"],
+    ["चलो, कहीं घूमने चलते हैं।", "Let's go out somewhere."], ["मैं तुम्हें बहुत याद कर रहा था।", "I was missing you a lot."],
+    ["मज़ाक मत करो।", "Stop joking."], ["तुमने तो कमाल कर दिया!", "You nailed it!"],
+    ["यह बात किसी को मत बताना।", "Don't tell this to anyone."], ["मैं तुम्हारे साथ हूँ।", "I am with you."]]},
+  {"type": "words", "title_hi": "समय से जुड़े शब्द", "title_en": "Time Words", "items": [
+    ["आधी रात", "Midnight", "मिडनाइट"], ["दोपहर", "Afternoon", "आफ़्टरनून"], ["सूर्योदय", "Sunrise", "सनराइज़"], ["सूर्यास्त", "Sunset", "सनसेट"], ["सप्ताहांत", "Weekend", "वीकेंड"],
+    ["पखवाड़ा", "Fortnight", "फ़ोर्टनाइट"], ["दशक", "Decade", "डेकेड"], ["सदी", "Century", "सेंचुरी"], ["हर रोज़", "Daily", "डेली"], ["कभी-कभी", "Sometimes", "समटाइम्स"]]},
+  {"type": "words", "title_hi": "बैंक से जुड़े शब्द", "title_en": "Banking Words", "items": [
+    ["खाता", "Account", "अकाउंट"], ["जमा करना", "Deposit", "डिपॉज़िट"], ["निकालना", "Withdraw", "विदड्रॉ"], ["ब्याज", "Interest", "इंटरेस्ट"], ["कर्ज़", "Loan", "लोन"],
+    ["किस्त", "Instalment", "इंस्टॉलमेंट"], ["शेष राशि", "Balance", "बैलेंस"], ["हस्ताक्षर", "Signature", "सिग्नेचर"], ["खाताधारक", "Account holder", "अकाउंट होल्डर"], ["नकद", "Cash", "कैश"]]},
+  {"type": "sentences", "title_hi": "गुस्से में बोले जाने वाले वाक्य", "title_en": "When You're Angry", "items": [
+    ["मुझे अकेला छोड़ दो।", "Leave me alone."], ["मेरा दिमाग़ मत खाओ।", "Stop bugging me."],
+    ["बहुत हो गया!", "Enough is enough!"], ["अपनी हद में रहो।", "Know your limits."],
+    ["मुझसे बात मत करो।", "Don't talk to me."], ["तुम्हें शर्म आनी चाहिए।", "You should be ashamed of yourself."],
+    ["मेरा मूड ख़राब मत करो।", "Don't spoil my mood."], ["चुप रहो!", "Keep quiet!"]]},
+  {"type": "words", "title_hi": "अस्पताल के शब्द", "title_en": "Hospital Words", "items": [
+    ["मरीज़", "Patient", "पेशेंट"], ["दवा की पर्ची", "Prescription", "प्रिस्क्रिप्शन"], ["पट्टी", "Bandage", "बैंडेज"], ["इलाज", "Treatment", "ट्रीटमेंट"], ["शल्य चिकित्सा", "Surgery", "सर्जरी"],
+    ["भर्ती होना", "Get admitted", "गेट एडमिटेड"], ["छुट्टी मिलना", "Discharge", "डिस्चार्ज"], ["जाँच", "Check-up", "चेक-अप"], ["टीका", "Vaccine", "वैक्सीन"], ["आपातकाल", "Emergency", "इमरजेंसी"]]},
+  {"type": "words", "title_hi": "खेल-कूद के शब्द", "title_en": "Sports Words", "items": [
+    ["खिलाड़ी", "Player", "प्लेयर"], ["मैदान", "Ground", "ग्राउंड"], ["जीत", "Victory", "विक्ट्री"], ["हार", "Defeat", "डिफ़ीट"], ["बराबरी", "Draw", "ड्रॉ"],
+    ["कप्तान", "Captain", "कैप्टन"], ["दर्शक", "Spectator", "स्पेक्टेटर"], ["इनाम", "Prize", "प्राइज़"], ["दौड़", "Race", "रेस"], ["तैराकी", "Swimming", "स्विमिंग"]]},
+  {"type": "sentences", "title_hi": "माफ़ी माँगने के वाक्य", "title_en": "Saying Sorry", "items": [
+    ["मुझे माफ़ कर दो।", "Please forgive me."], ["मेरा ऐसा मतलब नहीं था।", "I didn't mean that."],
+    ["ग़लती मेरी थी।", "It was my fault."], ["देर से आने के लिए माफ़ी चाहता हूँ।", "Sorry for coming late."],
+    ["आगे से ऐसा नहीं होगा।", "It won't happen again."], ["मैंने तुम्हारा दिल दुखाया, मुझे अफ़सोस है।", "I am sorry I hurt you."],
+    ["कोई बात नहीं, भूल जाओ।", "It's okay, forget it."], ["परेशानी के लिए खेद है।", "Sorry for the inconvenience."]]},
+  {"type": "words", "title_hi": "शादी से जुड़े शब्द", "title_en": "Wedding Words", "items": [
+    ["दूल्हा", "Groom", "ग्रूम"], ["दुल्हन", "Bride", "ब्राइड"], ["बारात", "Wedding procession", "वेडिंग प्रोसेशन"], ["सगाई", "Engagement", "एंगेजमेंट"], ["मेहमान", "Guest", "गेस्ट"],
+    ["न्योता", "Invitation", "इनविटेशन"], ["फेरे", "Wedding vows", "वेडिंग वाउज़"], ["विदाई", "Farewell", "फ़ेयरवेल"], ["सालगिरह", "Anniversary", "एनिवर्सरी"], ["जीवनसाथी", "Life partner", "लाइफ़ पार्टनर"]]},
+  {"type": "words", "title_hi": "घर के काम", "title_en": "Household Chores", "items": [
+    ["बर्तन धोना", "Do the dishes", "डू द डिशेज़"], ["कपड़े धोना", "Do the laundry", "डू द लॉन्ड्री"], ["बिस्तर ठीक करना", "Make the bed", "मेक द बेड"], ["कपड़े तह करना", "Fold clothes", "फ़ोल्ड क्लोद्स"], ["धूल झाड़ना", "Dust", "डस्ट"],
+    ["कूड़ा बाहर फेंकना", "Take out the trash", "टेक आउट द ट्रैश"], ["पौधों को पानी देना", "Water the plants", "वॉटर द प्लांट्स"], ["राशन लाना", "Buy groceries", "बाय ग्रोसरीज़"], ["मेज़ लगाना", "Set the table", "सेट द टेबल"], ["सब्ज़ी काटना", "Chop vegetables", "चॉप वेजिटेबल्स"]]},
+  {"type": "sentences", "title_hi": "धन्यवाद और तारीफ़", "title_en": "Thanks & Compliments", "items": [
+    ["आपका बहुत-बहुत धन्यवाद।", "Thank you so much."], ["आपने बहुत मदद की।", "You have been a great help."],
+    ["तुम आज बहुत अच्छे लग रहे हो।", "You look great today."], ["खाना बहुत स्वादिष्ट था।", "The food was delicious."],
+    ["मुझे तुम पर गर्व है।", "I am proud of you."], ["यह तोहफ़ा बहुत सुंदर है।", "This gift is beautiful."],
+    ["आपके बिना यह मुमकिन नहीं था।", "This wouldn't have been possible without you."], ["इसमें धन्यवाद की क्या बात है।", "Don't mention it."]]},
+  {"type": "words", "title_hi": "रसोई के काम", "title_en": "Cooking Verbs", "items": [
+    ["उबालना", "Boil", "बॉयल"], ["तलना", "Fry", "फ़्राई"], ["भूनना", "Roast", "रोस्ट"], ["छीलना", "Peel", "पील"], ["कद्दूकस करना", "Grate", "ग्रेट"],
+    ["गूँथना", "Knead", "नीड"], ["मिलाना", "Mix", "मिक्स"], ["बेलना", "Roll", "रोल"], ["छानना", "Strain", "स्ट्रेन"], ["छौंक लगाना", "Temper", "टेम्पर"]]},
+  {"type": "words", "title_hi": "सड़क और ट्रैफ़िक", "title_en": "Road & Traffic", "items": [
+    ["चौराहा", "Crossroads", "क्रॉसरोड्स"], ["फुटपाथ", "Pavement", "पेवमेंट"], ["पुल", "Bridge", "ब्रिज"], ["मोड़", "Turn", "टर्न"], ["गड्ढा", "Pothole", "पॉटहोल"],
+    ["जाम", "Traffic jam", "ट्रैफ़िक जैम"], ["गति-सीमा", "Speed limit", "स्पीड लिमिट"], ["जुर्माना", "Fine", "फ़ाइन"], ["पैदल यात्री", "Pedestrian", "पेडेस्ट्रियन"], ["टक्कर", "Collision", "कोलिज़न"]]},
+  {"type": "sentences", "title_hi": "सफ़र में बोले जाने वाले वाक्य", "title_en": "While Travelling", "items": [
+    ["यह बस कहाँ जाती है?", "Where does this bus go?"], ["स्टेशन यहाँ से कितनी दूर है?", "How far is the station from here?"],
+    ["मेरी ट्रेन छूट गई।", "I missed my train."], ["क्या यह सीट खाली है?", "Is this seat free?"],
+    ["अगला स्टॉप कौन-सा है?", "What is the next stop?"], ["मुझे यहीं उतार दीजिए।", "Please drop me here."],
+    ["टिकट कितने का है?", "How much is the ticket?"], ["हम कितने बजे पहुँचेंगे?", "What time will we reach?"]]},
+  {"type": "words", "title_hi": "ज़रूरी Phrasal Verbs", "title_en": "Phrasal Verbs", "items": [
+    ["हार मान लेना", "Give up", "गिव अप"], ["ढूँढना", "Look for", "लुक फ़ॉर"], ["टाल देना", "Put off", "पुट ऑफ़"], ["पता लगाना", "Find out", "फ़ाइंड आउट"], ["देखभाल करना", "Look after", "लुक आफ़्टर"],
+    ["रद्द करना", "Call off", "कॉल ऑफ़"], ["अचानक मिलना", "Run into", "रन इनटू"], ["बड़ा होना", "Grow up", "ग्रो अप"], ["सहन करना", "Put up with", "पुट अप विद"], ["जारी रखना", "Carry on", "कैरी ऑन"]]},
+  {"type": "words", "title_hi": "पैसों से जुड़े शब्द", "title_en": "Money Words", "items": [
+    ["कमाई", "Income", "इनकम"], ["ख़र्चा", "Expense", "एक्सपेंस"], ["बचत", "Savings", "सेविंग्स"], ["कर", "Tax", "टैक्स"], ["मुनाफ़ा", "Profit", "प्रॉफ़िट"],
+    ["घाटा", "Loss", "लॉस"], ["किराया", "Rent", "रेंट"], ["निवेश", "Investment", "इन्वेस्टमेंट"], ["महँगाई", "Inflation", "इन्फ़्लेशन"], ["दान", "Donation", "डोनेशन"]]},
+  {"type": "sentences", "title_hi": "रेस्टोरेंट में", "title_en": "At a Restaurant", "items": [
+    ["दो लोगों के लिए टेबल चाहिए।", "We need a table for two."], ["मेन्यू दिखाइए।", "Please show me the menu."],
+    ["आज का स्पेशल क्या है?", "What is today's special?"], ["खाना कम तीखा बनाइए।", "Please make the food less spicy."],
+    ["थोड़ा पानी मिलेगा?", "Can I get some water?"], ["हमारा ऑर्डर अभी तक नहीं आया।", "Our order hasn't come yet."],
+    ["बचा हुआ खाना पैक कर दीजिए।", "Please pack the leftover food."], ["बिल ले आइए।", "Can we have the bill, please?"]]},
+  {"type": "words", "title_hi": "औज़ारों के नाम", "title_en": "Tools", "items": [
+    ["हथौड़ा", "Hammer", "हैमर"], ["पेचकस", "Screwdriver", "स्क्रूड्राइवर"], ["आरी", "Saw", "सॉ"], ["कील", "Nail", "नेल"], ["पेंच", "Screw", "स्क्रू"],
+    ["सीढ़ी", "Ladder", "लैडर"], ["कुदाल", "Spade", "स्पेड"], ["रस्सी", "Rope", "रोप"], ["कैंची", "Scissors", "सिज़र्स"], ["सुई", "Needle", "नीडल"]]},
+  {"type": "words", "title_hi": "प्रकृति से जुड़े शब्द", "title_en": "Nature Words", "items": [
+    ["पहाड़", "Mountain", "माउंटेन"], ["घाटी", "Valley", "वैली"], ["झरना", "Waterfall", "वॉटरफ़ॉल"], ["नदी", "River", "रिवर"], ["झील", "Lake", "लेक"],
+    ["जंगल", "Forest", "फ़ॉरेस्ट"], ["रेगिस्तान", "Desert", "डेज़र्ट"], ["गुफ़ा", "Cave", "केव"], ["किनारा", "Shore", "शोर"], ["चट्टान", "Rock", "रॉक"]]},
+  {"type": "sentences", "title_hi": "पढ़ाई से जुड़े वाक्य", "title_en": "Study Sentences", "items": [
+    ["मुझे यह सवाल समझ नहीं आया।", "I didn't understand this question."], ["क्या आप इसे दोबारा समझा सकते हैं?", "Can you explain it again?"],
+    ["कल मेरा पेपर है।", "I have an exam tomorrow."], ["मैंने पूरा सिलेबस रिवाइज़ कर लिया है।", "I have revised the whole syllabus."],
+    ["मुझे अच्छे नंबर मिले।", "I got good marks."], ["ध्यान से पढ़ो।", "Study carefully."],
+    ["मैं लाइब्रेरी जा रहा हूँ।", "I am going to the library."], ["रोज़ थोड़ा-थोड़ा पढ़ो।", "Study a little every day."]]},
+  {"type": "words", "title_hi": "घर के हिस्से", "title_en": "Parts of a House", "items": [
+    ["छत", "Roof", "रूफ़"], ["आँगन", "Courtyard", "कोर्टयार्ड"], ["सीढ़ियाँ", "Stairs", "स्टेयर्स"], ["दीवार", "Wall", "वॉल"], ["फ़र्श", "Floor", "फ़्लोर"],
+    ["बरामदा", "Veranda", "वरांडा"], ["तहख़ाना", "Basement", "बेसमेंट"], ["चौखट", "Doorframe", "डोरफ़्रेम"], ["स्नानघर", "Bathroom", "बाथरूम"], ["भंडार घर", "Storeroom", "स्टोररूम"]]},
+  {"type": "words", "title_hi": "अनाज और दालें", "title_en": "Grains & Pulses", "items": [
+    ["गेहूँ", "Wheat", "व्हीट"], ["चावल", "Rice", "राइस"], ["जौ", "Barley", "बार्ली"], ["बाजरा", "Pearl millet", "पर्ल मिलेट"], ["मक्का", "Maize", "मेज़"],
+    ["चना", "Chickpea", "चिकपी"], ["मसूर", "Red lentil", "रेड लेंटिल"], ["राजमा", "Kidney beans", "किडनी बीन्स"], ["मूँगफली", "Peanut", "पीनट"], ["सरसों", "Mustard", "मस्टर्ड"]]},
+  {"type": "sentences", "title_hi": "इंटरव्यू में बोले जाने वाले वाक्य", "title_en": "Interview Sentences", "items": [
+    ["मुझे अपने बारे में बताइए।", "Tell me about yourself."], ["मैंने कॉमर्स में ग्रेजुएशन किया है।", "I have done my graduation in Commerce."],
+    ["मेरे पास दो साल का अनुभव है।", "I have two years of experience."], ["मैं जल्दी सीखता हूँ।", "I am a quick learner."],
+    ["आप यह नौकरी क्यों चाहते हैं?", "Why do you want this job?"], ["मैं टीम में अच्छा काम करता हूँ।", "I work well in a team."],
+    ["आप कब से जॉइन कर सकते हैं?", "When can you join?"], ["मौक़ा देने के लिए धन्यवाद।", "Thank you for the opportunity."]]},
+  {"type": "words", "title_hi": "कीड़े-मकौड़े", "title_en": "Insects", "items": [
+    ["मच्छर", "Mosquito", "मॉस्किटो"], ["मक्खी", "Fly", "फ़्लाई"], ["चींटी", "Ant", "ऐंट"], ["दीमक", "Termite", "टर्माइट"], ["तितली", "Butterfly", "बटरफ़्लाई"],
+    ["मधुमक्खी", "Honeybee", "हनीबी"], ["मकड़ी", "Spider", "स्पाइडर"], ["तिलचट्टा", "Cockroach", "कॉकरोच"], ["जुगनू", "Firefly", "फ़ायरफ़्लाई"], ["टिड्डा", "Grasshopper", "ग्रासहॉपर"]]},
+  {"type": "words", "title_hi": "शरीर की क्रियाएँ", "title_en": "Body Actions", "items": [
+    ["छींकना", "Sneeze", "स्नीज़"], ["खाँसना", "Cough", "कफ़"], ["जम्हाई लेना", "Yawn", "यॉन"], ["डकार लेना", "Burp", "बर्प"], ["हिचकी आना", "Hiccup", "हिकप"],
+    ["पलक झपकाना", "Blink", "ब्लिंक"], ["खर्राटे लेना", "Snore", "स्नोर"], ["काँपना", "Shiver", "शिवर"], ["पसीना आना", "Sweat", "स्वेट"], ["मुस्कुराना", "Smile", "स्माइल"]]},
+  {"type": "sentences", "title_hi": "मेहमान आने पर", "title_en": "When Guests Come", "items": [
+    ["आइए, अंदर आइए।", "Please come in."], ["बैठिए, आराम से बैठिए।", "Have a seat, make yourself comfortable."],
+    ["आप क्या लेंगे, चाय या कॉफ़ी?", "What would you like, tea or coffee?"], ["रास्ता ढूँढने में परेशानी तो नहीं हुई?", "Did you have trouble finding the way?"],
+    ["खाना खाकर जाइएगा।", "Please have a meal before you go."], ["आपसे मिलकर बहुत अच्छा लगा।", "It was nice meeting you."],
+    ["फिर आइएगा।", "Do visit again."], ["घर पहुँचकर फ़ोन कर देना।", "Call me once you reach home."]]},
+  {"type": "words", "title_hi": "मोबाइल और कंप्यूटर", "title_en": "Mobile & Computer", "items": [
+    ["सहेजना", "Save", "सेव"], ["मिटाना", "Delete", "डिलीट"], ["साझा करना", "Share", "शेयर"], ["खोजना", "Search", "सर्च"], ["जोड़ना", "Connect", "कनेक्ट"],
+    ["बंद करना", "Switch off", "स्विच ऑफ़"], ["दोबारा चालू करना", "Restart", "रीस्टार्ट"], ["संदेश", "Message", "मैसेज"], ["सूचना", "Notification", "नोटिफ़िकेशन"], ["छपाई", "Print", "प्रिंट"]]},
+  {"type": "words", "title_hi": "खाना बनाने की चीज़ें", "title_en": "Cooking Ingredients", "items": [
+    ["आटा", "Flour", "फ़्लावर"], ["मैदा", "Refined flour", "रिफ़ाइंड फ़्लावर"], ["बेसन", "Gram flour", "ग्राम फ़्लावर"], ["चीनी", "Sugar", "शुगर"], ["गुड़", "Jaggery", "जैगरी"],
+    ["घी", "Clarified butter", "क्लैरिफ़ाइड बटर"], ["सिरका", "Vinegar", "विनेगर"], ["मक्खन", "Butter", "बटर"], ["दही", "Curd", "कर्ड"], ["सूजी", "Semolina", "सेमोलिना"]]},
+  {"type": "sentences", "title_hi": "रसोई में बोले जाने वाले वाक्य", "title_en": "Kitchen Sentences", "items": [
+    ["गैस धीमी कर दो।", "Turn the flame down."], ["दूध उबल गया है।", "The milk has boiled."],
+    ["सब्ज़ी में नमक कम है।", "The curry needs more salt."], ["प्याज़ बारीक काट दो।", "Chop the onions finely."],
+    ["कुकर की तीन सीटी आ गईं।", "The cooker has whistled three times."], ["फ़्रिज से दही निकाल दो।", "Take the curd out of the fridge."],
+    ["आटा गूँथ दो।", "Please knead the dough."], ["खाना ठंडा हो रहा है, जल्दी आओ।", "The food is getting cold, come quickly."]]},
+  {"type": "words", "title_hi": "कानून और पुलिस", "title_en": "Law & Police", "items": [
+    ["चोर", "Thief", "थीफ़"], ["गवाह", "Witness", "विटनेस"], ["वकील", "Lawyer", "लॉयर"], ["न्यायाधीश", "Judge", "जज"], ["अपराध", "Crime", "क्राइम"],
+    ["सबूत", "Evidence", "एविडेंस"], ["ज़मानत", "Bail", "बेल"], ["शिकायत", "Complaint", "कम्प्लेंट"], ["गिरफ़्तारी", "Arrest", "अरेस्ट"], ["अदालत", "Court", "कोर्ट"]]},
+  {"type": "words", "title_hi": "रोज़ के Adjectives", "title_en": "Common Adjectives", "items": [
+    ["गीला", "Wet", "वेट"], ["सूखा", "Dry", "ड्राई"], ["भारी", "Heavy", "हेवी"], ["हल्का", "Light", "लाइट"], ["मोटा", "Thick", "थिक"],
+    ["पतला", "Thin", "थिन"], ["गहरा", "Deep", "डीप"], ["उथला", "Shallow", "शैलो"], ["चिकना", "Smooth", "स्मूद"], ["खुरदुरा", "Rough", "रफ़"]]},
+  {"type": "sentences", "title_hi": "बारिश के मौसम में", "title_en": "Rainy Day Sentences", "items": [
+    ["आज बहुत तेज़ बारिश हो रही है।", "It's raining heavily today."], ["मैं पूरा भीग गया।", "I got drenched."],
+    ["छाता खोल लो।", "Open the umbrella."], ["सड़क पर पानी भर गया है।", "The road is waterlogged."],
+    ["बिजली कड़क रही है।", "It's thundering."], ["चलो, पकौड़े बनाते हैं।", "Let's make pakoras."],
+    ["बारिश रुकने का इंतज़ार करते हैं।", "Let's wait for the rain to stop."], ["मौसम बहुत सुहाना है।", "The weather is very pleasant."]]}
+]

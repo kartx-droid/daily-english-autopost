@@ -1,0 +1,88 @@
+name: Daily Instagram post
+
+on:
+  schedule:
+    - cron: "30 13 * * *" # 13:30 UTC = 7:00 PM IST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Sirf image banao (Instagram par post mat karo)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    env:
+      # Scheduled runs have no inputs, so they always post for real.
+      DRY_RUN: ${{ inputs.dry_run == true }}
+      HAS_PAT: ${{ secrets.GH_PAT != '' }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -q && sudo apt-get install -yq fonts-noto-core
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Render today's image
+        id: render
+        run: python scripts/autopost.py render
+
+      - name: Upload preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-preview
+          path: ${{ steps.render.outputs.image }}
+
+      - name: Commit image (Instagram needs a public URL)
+        if: env.DRY_RUN != 'true'
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.render.outputs.image }}"
+          git commit -m "Image for post $(( ${{ steps.render.outputs.index }} + 1 ))"
+          git push
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to Instagram
+        if: env.DRY_RUN != 'true'
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          sleep 10
+          python scripts/autopost.py publish \
+            --image-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.commit.outputs.sha }}/${{ steps.render.outputs.image }}"
+
+      - name: Save progress
+        if: env.DRY_RUN != 'true'
+        run: |
+          git add state.json
+          git commit -m "Posted $(( ${{ steps.render.outputs.index }} + 1 ))"
+          git push
+
+      # Long-lived Instagram tokens expire after 60 days; refreshing keeps it alive.
+      # Needs a GH_PAT secret allowed to write this repo's secrets. Without it, renew the token manually.
+      - name: Refresh Instagram token
+        if: env.DRY_RUN != 'true' && env.HAS_PAT == 'true'
+        continue-on-error: true
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          python scripts/autopost.py refresh --out "$RUNNER_TEMP/ig_token"
+          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" < "$RUNNER_TEMP/ig_token"
+          rm -f "$RUNNER_TEMP/ig_token"
