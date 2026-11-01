@@ -241,21 +241,37 @@ def api(method, path, token, **params):
     return body
 
 
-def publish(image_url):
-    token = os.environ.get("IG_ACCESS_TOKEN")
+def get_token():
+    token = os.environ.get("IG_ACCESS_TOKEN", "").strip()
     if not token:
         sys.exit("IG_ACCESS_TOKEN set nahi hai (GitHub repo secrets me add karein).")
+    return token
+
+
+def whoami(token):
+    """Return (instagram user id, username) for the account the token can post to."""
+    if is_instagram_login_token(token):
+        me = api("GET", "me", token, fields="user_id,username")
+        return me["user_id"], me.get("username")
+    me = api("GET", IG_USER_ID, token, fields="username")
+    return IG_USER_ID, me.get("username")
+
+
+def check():
+    """Verify the token can reach the Instagram account, without posting anything."""
+    token = get_token()
+    _, username = whoami(token)
+    print(f"Token OK: can access @{username}")
+
+
+def publish(image_url):
+    token = get_token()
     state = load_state()
     index, post = pick_post(None)
     caption = build_caption(index, post, previous_post(state, load_posts()))
 
-    if is_instagram_login_token(token):
-        me = api("GET", "me", token, fields="user_id,username")
-        user_id = me["user_id"]
-    else:
-        user_id = IG_USER_ID
-        me = api("GET", user_id, token, fields="username")
-    print(f"Posting as @{me.get('username')} -> post {index + 1}: {post['title_hi']}")
+    user_id, username = whoami(token)
+    print(f"Posting as @{username} -> post {index + 1}: {post['title_hi']}")
 
     container = api("POST", f"{user_id}/media", token, image_url=image_url, caption=caption)
     cid = container["id"]
@@ -285,9 +301,7 @@ def publish(image_url):
 # ---------- refresh ----------
 
 def refresh(out_file):
-    token = os.environ.get("IG_ACCESS_TOKEN")
-    if not token:
-        sys.exit("IG_ACCESS_TOKEN set nahi hai.")
+    token = get_token()
     if not is_instagram_login_token(token):
         print("Unified-login (system-user) token never expires; nothing to refresh.")
         return
@@ -314,12 +328,15 @@ def main():
     p.add_argument("--image-url", required=True, help="public URL of the rendered JPEG")
     f = sub.add_parser("refresh")
     f.add_argument("--out", required=True, help="file to write the refreshed token to")
+    sub.add_parser("check", help="verify IG_ACCESS_TOKEN works, without posting")
     c = sub.add_parser("caption", help="print the caption a post would get (for checking)")
     c.add_argument("--index", type=int, required=True, help="0-based post index")
     args = parser.parse_args()
 
     if args.cmd == "render":
         render(args.index, args.out)
+    elif args.cmd == "check":
+        check()
     elif args.cmd == "caption":
         posts = load_posts()
         prev = posts[args.index - 1] if args.index > 0 else None
