@@ -2,11 +2,17 @@ name: Daily Instagram post
 
 on:
   schedule:
-    - cron: "30 13 * * *" # 13:30 UTC = 7:00 PM IST
+    - cron: "30 7 * * *"  # 07:30 UTC = 1:00 PM IST -> Reel
+    - cron: "30 13 * * *" # 13:30 UTC = 7:00 PM IST -> Carousel (then moves to the next topic)
   workflow_dispatch:
     inputs:
+      format:
+        description: "Kya banana hai"
+        type: choice
+        options: [carousel, reel, image]
+        default: carousel
       dry_run:
-        description: "Sirf image banao (Instagram par post mat karo)"
+        description: "Sirf media banao (Instagram par post mat karo)"
         type: boolean
         default: true
 
@@ -23,6 +29,7 @@ jobs:
     env:
       # Scheduled runs have no inputs, so they always post for real.
       DRY_RUN: ${{ inputs.dry_run == true }}
+      FORMAT: ${{ github.event_name == 'schedule' && (github.event.schedule == '30 7 * * *' && 'reel' || 'carousel') || inputs.format }}
       HAS_PAT: ${{ secrets.GH_PAT != '' }}
     steps:
       - uses: actions/checkout@v5
@@ -43,47 +50,53 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: python scripts/autopost.py check
 
-      - name: Render today's image
+      - name: Render today's ${{ env.FORMAT }}
         id: render
-        run: python scripts/autopost.py render
+        run: python scripts/autopost.py render --format "$FORMAT"
 
       - name: Upload preview
+        if: steps.render.outputs.skip != 'true'
         uses: actions/upload-artifact@v5
         with:
-          name: post-preview
-          path: ${{ steps.render.outputs.image }}
+          name: preview-${{ env.FORMAT }}
+          path: |
+            ${{ steps.render.outputs.dir }}/*.jpg
+            ${{ steps.render.outputs.dir }}/*.mp4
 
-      - name: Commit image (Instagram needs a public URL)
-        if: env.DRY_RUN != 'true'
+      - name: Commit images (Instagram needs public URLs)
+        if: env.DRY_RUN != 'true' && steps.render.outputs.skip != 'true' && env.FORMAT != 'reel'
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "${{ steps.render.outputs.image }}"
-          # A retry after a failed publish may re-render an identical image.
-          git diff --cached --quiet || git commit -m "Image for post $(( ${{ steps.render.outputs.index }} + 1 ))"
+          git add "${{ steps.render.outputs.dir }}"
+          # A retry after a failed publish may re-render identical images.
+          git diff --cached --quiet || git commit -m "Images for post $(( ${{ steps.render.outputs.index }} + 1 ))"
           git push
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Publish to Instagram
-        if: env.DRY_RUN != 'true'
+        if: env.DRY_RUN != 'true' && steps.render.outputs.skip != 'true'
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
           sleep 10
-          python scripts/autopost.py publish \
-            --image-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.commit.outputs.sha }}/${{ steps.render.outputs.image }}"
+          python scripts/autopost.py publish --manifest "${{ steps.render.outputs.manifest }}" \
+            --base-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.commit.outputs.sha }}"
 
       - name: Save progress
-        if: env.DRY_RUN != 'true'
+        if: env.DRY_RUN != 'true' && steps.render.outputs.skip != 'true'
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add state.json
-          git commit -m "Posted $(( ${{ steps.render.outputs.index }} + 1 ))"
+          git commit -m "Posted ${FORMAT} for post $(( ${{ steps.render.outputs.index }} + 1 ))"
+          git pull --rebase -q
           git push
 
-      # Long-lived Instagram tokens expire after 60 days; refreshing keeps it alive.
-      # Needs a GH_PAT secret allowed to write this repo's secrets. Without it, renew the token manually.
+      # Only "Instagram login" (IG...) tokens expire; system-user tokens are skipped by the script.
+      # Needs a GH_PAT secret allowed to write this repo's secrets.
       - name: Refresh Instagram token
         if: env.DRY_RUN != 'true' && env.HAS_PAT == 'true'
         continue-on-error: true

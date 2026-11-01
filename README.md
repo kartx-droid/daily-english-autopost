@@ -1,13 +1,18 @@
 # @daily.english.line: Daily Auto Post
 
-Har roz **shaam 7 baje (IST)** GitHub Actions:
-1. `content/posts.json` se agla post uthata hai,
-2. usse 1080×1350 image banata hai (Hindi → English, pronunciation ke saath),
-3. Instagram par caption + hashtags ke saath post karta hai,
-4. `state.json` me yaad rakhta hai ki kaunsa post ho gaya.
+Har roz `content/posts.json` ka ek topic **do baar** post hota hai (GitHub Actions se):
 
-**Engagement ke liye:** har post ka aakhri item ek **quiz** hota hai. Image aur caption me uska English chhupa rehta hai (sirf hint dikhta hai, jaise `B _ _ _ _ _`), aur log answer comment karte hain. Agle din ka caption "✅ Kal ke quiz ka answer…" se shuru hota hai. Caption ki pehli line (hook) aur share/save wale prompts roz badalte hain. Inhe `scripts/autopost.py` me `HOOKS` aur `ASKS` me edit kar sakte hain.
-Kisi din ka caption dekhne ke liye: `python scripts/autopost.py caption --index 5`
+| Time (IST) | Format | Kya hota hai |
+|---|---|---|
+| **1:00 PM** | **Reel** (9:16 video, ~35–45 sec) | Hindi word dikhta hai aur Hindi AI voice use bolti hai, phir English reveal hota hai aur English AI voice use bolti hai. Aakhir me quiz aur Follow ka message. |
+| **7:00 PM** | **Carousel** (6 slides) | Cover → 3 detail slides → Quiz slide → poori list (revision ke liye). Iske baad agla topic shuru hota hai. |
+
+`state.json` yaad rakhta hai ki kaunsa topic chal raha hai aur us topic ki Reel ho chuki hai ya nahi.
+
+**Engagement ke liye:** har topic ka aakhri item ek **quiz** hota hai. Reel, slides aur caption me uska English chhupa rehta hai (sirf hint dikhta hai, jaise `B _ _ _ _ _`), aur log answer comment karte hain. Agle topic ka carousel caption "✅ Pichhle quiz ka answer…" se shuru hota hai. Hooks aur share/save wale prompts roz badalte hain. Inhe `scripts/autopost.py` me `HOOKS`, `REEL_HOOKS` aur `ASKS` me edit kar sakte hain.
+Kisi din ka caption dekhne ke liye: `python scripts/autopost.py caption --index 5 --format reel`
+
+**AI voice:** Microsoft ki free text-to-speech (`edge-tts`) use hoti hai, isliye koi key nahi chahiye. Voice badalni ho to workflow me `TTS_VOICE_HI` / `TTS_VOICE_EN` env set karein (default `hi-IN-SwaraNeural`, `en-IN-NeerjaNeural`). Agar voice service kabhi na chale to Reel bina awaaz ke ban jaati hai, post nahi rukta.
 
 Content bank me **60 posts** hain (40 vocabulary + 20 sentences). Yeh lagbhag 2 mahine chalenge.
 
@@ -52,11 +57,11 @@ Unified login wala (`EAA…`) token expire nahi hota, isliye aur kuch nahi chahi
 ### Step 4: Test karein
 
 1. Repo me **Actions** tab kholein. Agar poochhe to workflows enable karein.
-2. **Daily Instagram post → Run workflow** par jaayein. `dry_run` ✅ ticked rehne dein, phir Run dabayein.
-3. Run khatam hone par neeche **post-preview** download karke image dekh lein. Is run me Instagram par kuch post nahi hota.
-4. Sab theek lage to dobara **Run workflow** chalayein, is baar `dry_run` ❌ untick karke. Ab pehla post asli me Instagram par jayega.
+2. **Daily Instagram post → Run workflow** par jaayein, format (`carousel` / `reel` / `image`) chunein, `dry_run` ✅ ticked rehne dein, phir Run dabayein.
+3. Run khatam hone par neeche **preview-…** download karke slides/video dekh lein. Is run me Instagram par kuch post nahi hota.
+4. Sab theek lage to dobara **Run workflow** chalayein, is baar `dry_run` ❌ untick karke. Ab post asli me Instagram par jayega.
 
-Iske baad roz 7 baje apne aap post hoga. GitHub ke schedule kabhi-kabhi 5–30 min late chalte hain, yeh normal hai.
+Iske baad roz 1 baje Reel aur 7 baje Carousel apne aap post honge. GitHub ke schedule kabhi-kabhi 5–30 min late chalte hain, yeh normal hai.
 
 ---
 
@@ -69,14 +74,16 @@ Iske baad roz 7 baje apne aap post hoga. GitHub ke schedule kabhi-kabhi 5–30 m
   ```
   Words post me 10 items aur sentences post me 8 items best lagte hain.
 - **Content khatam hone par** workflow fail hoga aur GitHub aapko email karega. Tab naye posts add kar dein.
-- **Koi post skip/repeat karna:** `state.json` me `next_index` badlein. Yeh 0 se shuru hota hai, yaani Day 1 = 0.
-- **Time badalna:** `.github/workflows/daily-post.yml` me `cron` badlein. Time UTC me hota hai: IST − 5:30. Jaise subah 9 baje IST = `30 3 * * *`.
+- **Koi topic skip/repeat karna:** `state.json` me `next_index` badlein. Yeh 0 se shuru hota hai, yaani topic 1 = 0.
+- **Time badalna:** `.github/workflows/daily-post.yml` me dono `cron` badlein. Time UTC me hota hai: IST − 5:30. Jaise subah 9 baje IST = `30 3 * * *`.
+  Reel wali line ka time badla to `FORMAT:` wali line me bhi wahi cron likhein.
 - **Post fail hua?** Actions tab me red ❌ run kholkar error padhein. Sabse common wajah token ya permission ki galti hoti hai, uske liye Step 1 dobara check karein.
 
 ## Local preview (optional)
 
 ```bash
 pip install -r requirements.txt
-python scripts/autopost.py render --index 0 --out previews/day-1.jpg
+python scripts/autopost.py render --format carousel --index 0   # -> images/post-001/
+python scripts/autopost.py render --format reel --index 0       # -> build/reel-001/reel.mp4
 ```
 Windows par Edge se render karne ke liye pehle `PLAYWRIGHT_CHANNEL=msedge` set karein.

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=block" rel="stylesheet">
+<style>
+  /* Carousel slides (1080x1350) and Reel frames (1080x1920). All sizes inside .stage are in em,
+     so window.fit() can shrink everything together until nothing overflows. */
+  :root {
+    --accent: {{ACCENT}};
+    --accent-dark: {{ACCENT_DARK}};
+    --ink: #13213F;
+    --hi: #B42318;
+    --pron: #E0403A;
+    --paper: #FFFBF2;
+    --quiz: #FFF1B8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: {{W}}px; height: {{H}}px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    font-family: "Baloo 2", "Noto Sans Devanagari", "Nirmala UI", sans-serif;
+    color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+  .stage { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; font-size: 40px; }
+  body.reel .stage { font-size: 60px; }
+  .nowrap { white-space: nowrap; overflow: hidden; max-width: 100%; }
+  .hidden { visibility: hidden; }
+  .pill {
+    display: inline-block; background: #fff; color: var(--accent-dark);
+    font-size: 1.15em; font-weight: 700; padding: .02em .9em; border-radius: 999px;
+  }
+
+  /* ---- carousel: cover ---- */
+  .cover { flex: 1; background: var(--accent); color: #fff; display: flex; flex-direction: column; padding: 1.4em 1.5em 1.1em; text-align: center; }
+  .cmain { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .55em; }
+  .kicker { font-size: .95em; font-weight: 700; background: rgba(255,255,255,.22); padding: .05em 1em; border-radius: 999px; letter-spacing: 1px; }
+  .cover h1 { font-size: 3.3em; font-weight: 800; line-height: 1.12; }
+  .count { font-size: 1.05em; font-weight: 700; border: 3px solid rgba(255,255,255,.65); padding: .1em 1em; border-radius: 18px; margin-top: .4em; }
+  .swipe { align-self: flex-end; font-size: 1.35em; font-weight: 800; background: #fff; color: var(--accent-dark); padding: .05em .8em; border-radius: 999px; }
+
+  /* ---- carousel: detail slides ---- */
+  .detail { flex: 1; display: flex; flex-direction: column; padding: .9em 1.4em .8em; }
+  .dtop { display: flex; justify-content: space-between; align-items: center; font-size: .85em; font-weight: 700; color: var(--accent-dark); }
+  .dtop .topic { background: var(--accent); color: #fff; padding: .05em .9em; border-radius: 999px; }
+  .cards { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .wcard, .scard {
+    background: #fff; border-left: 16px solid var(--accent); border-radius: 28px;
+    padding: .3em .9em .35em; box-shadow: 0 6px 0 #EADFC8;
+  }
+  .whi { font-size: 1.35em; font-weight: 700; color: var(--hi); line-height: 1.2; }
+  .wen { font-size: 2.2em; font-weight: 800; line-height: 1.1; }
+  .wpron { font-size: 1.05em; font-weight: 600; color: var(--pron); }
+  .shi { font-size: 1.1em; font-weight: 600; color: var(--hi); line-height: 1.3; }
+  .sen { font-size: 1.3em; font-weight: 800; line-height: 1.25; }
+
+  /* ---- quiz (carousel slide and reel frame) ---- */
+  .quizslide { flex: 1; background: var(--quiz); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .45em; padding: 1em 1.4em; text-align: center; }
+  .qbadge { background: var(--accent-dark); color: #fff; font-weight: 800; font-size: 1.1em; padding: .05em 1.1em; border-radius: 999px; letter-spacing: 3px; }
+  .qq { font-size: 1.2em; font-weight: 700; }
+  .qhi { font-size: 2.9em; font-weight: 800; color: var(--hi); line-height: 1.2; }
+  .qhi.sent { font-size: 1.8em; }
+  .qhint { font-size: 2em; font-weight: 800; color: var(--accent-dark); white-space: pre; }
+  .qcta { font-size: 1.25em; font-weight: 800; background: var(--accent); color: #fff; padding: .15em 1em; border-radius: 20px; margin-top: .3em; }
+  .qnote { font-size: .85em; font-weight: 600; color: #6B5A2A; }
+
+  /* ---- reel frames (keep clear of Instagram's top bar and bottom caption area) ---- */
+  .reelf { flex: 1; display: flex; flex-direction: column; }
+  .rtop { background: var(--accent); color: #fff; text-align: center; padding: 140px 1em .6em; border-radius: 0 0 60px 60px; }
+  .rtitle { font-size: 1.2em; font-weight: 800; line-height: 1.2; margin-bottom: .15em; }
+  .rtop .pill { font-size: .8em; }
+  .rbody { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: .4em; padding: 0 1em; }
+  .rbody.quizslide { flex: 1; margin: 40px 50px 30px; border-radius: 40px; }
+  .reelf .qcta { white-space: nowrap; }
+  .rprog { font-size: .9em; font-weight: 700; color: var(--accent-dark); background: #fff; border: 3px solid var(--accent); padding: 0 .8em; border-radius: 999px; }
+  .rhi { font-size: 3.1em; font-weight: 800; color: var(--hi); line-height: 1.2; }
+  .rshi { font-size: 1.75em; font-weight: 700; color: var(--hi); line-height: 1.3; }
+  .rq { font-size: 1.05em; font-weight: 700; color: var(--accent-dark); }
+  .ren { font-size: 3.3em; font-weight: 800; line-height: 1.1; }
+  .rsen { font-size: 1.85em; font-weight: 800; line-height: 1.25; }
+  .rpron { font-size: 1.5em; font-weight: 600; color: var(--pron); }
+  .rkicker { font-size: 1.3em; font-weight: 700; color: var(--accent-dark); }
+  .rcountbig { font-size: 6em; font-weight: 800; color: var(--accent); line-height: 1; }
+  .rnoun { font-size: 2em; font-weight: 800; }
+  .rsub { font-size: 1.2em; font-weight: 700; color: var(--hi); }
+  .rfollow { font-size: 3em; font-weight: 800; color: var(--accent); line-height: 1.1; }
+  .rbighandle { font-size: 1.6em; font-weight: 800; }
+  .rhandle { text-align: center; font-size: .9em; font-weight: 700; color: var(--accent-dark); }
+  .rsafe { height: 420px; flex: none; }
+
+  footer {
+    flex: none; background: var(--ink); color: #fff;
+    height: 118px; padding: 0 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    width: 86px; height: 86px; border-radius: 50%;
+    background: #000; border: 3px solid #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 17px; font-weight: 800; line-height: 1.05; text-align: center;
+  }
+  .logo i { font-style: normal; display: block; width: 46px; height: 3px; background: var(--accent); margin: 2px 0; }
+  .handle { font-size: 40px; font-weight: 700; }
+  .cta { font-size: 30px; font-weight: 600; color: #FFD166; }
+</style>
+</head>
+<body class="{{KIND}}">
+  <div class="stage" id="stage">{{BODY}}</div>
+  {{FOOTER}}
+<script>
+  window.fit = async function () {
+    await document.fonts.ready;
+    const stage = document.getElementById("stage");
+    const over = () =>
+      stage.scrollHeight > stage.clientHeight + 1 ||
+      [...stage.querySelectorAll(".nowrap")].some(el => el.scrollWidth > el.clientWidth + 1);
+    let size = parseFloat(getComputedStyle(stage).fontSize);
+    while (over() && size > 14) {
+      size -= 1;
+      stage.style.fontSize = size + "px";
+    }
+  };
+</script>
+</body>
+</html>

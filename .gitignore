@@ -1,3 +1,4 @@
 previews/
+build/
 __pycache__/
-*.html.tmp
+*.tmp.html
