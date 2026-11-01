@@ -1,5 +1,5 @@
 {
-  "next_index": 1,
+  "next_index": 2,
   "history": [
     {
       "post": 1,
@@ -13,6 +13,13 @@
       "title": "रसोई के बर्तन",
       "media_id": "18125609444297143",
       "posted_at": "2026-11-01T07:20:49+05:30"
+    },
+    {
+      "post": 2,
+      "type": "carousel",
+      "title": "रसोई के बर्तन",
+      "media_id": "18001005660051759",
+      "posted_at": "2026-11-01T19:38:02+05:30"
     }
   ],
   "reel_posted": 2
