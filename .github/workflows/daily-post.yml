@@ -54,7 +54,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "${{ steps.render.outputs.image }}"
-          git commit -m "Image for post $(( ${{ steps.render.outputs.index }} + 1 ))"
+          # A retry after a failed publish may re-render an identical image.
+          git diff --cached --quiet || git commit -m "Image for post $(( ${{ steps.render.outputs.index }} + 1 ))"
           git push
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
