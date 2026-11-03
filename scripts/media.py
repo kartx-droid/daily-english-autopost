@@ -21,6 +21,24 @@ FPS = 30
 VOICE_HI = os.environ.get("TTS_VOICE_HI", "hi-IN-SwaraNeural")
 VOICE_EN = os.environ.get("TTS_VOICE_EN", "en-IN-NeerjaNeural")
 
+# Reels stay short: they teach only some items, and the full list is in the carousel.
+REEL_WORDS = 6
+REEL_SENTENCES = 5
+REEL_HOOKS = {
+    "words": [
+        ("question", "English में बता पाओगे?"),
+        ("score", "{n} में से कितने आते हैं?"),
+        ("problem", "English में अटक जाते हो?"),
+    ],
+    "sentences": [
+        ("question", "English में कैसे बोलोगे?"),
+        ("score", "{n} में से कितने बोल पाओगे?"),
+        ("problem", "English में अटक जाते हो?"),
+    ],
+}
+TIMER_Y = 1470  # the guess timer's position, just above Instagram's bottom caption area
+TIMER_HEIGHT = 26
+
 # (accent, dark accent) pairs, rotated per post so the grid doesn't look repetitive.
 PALETTES = [
     ("#16A34A", "#0F5F2E"),
@@ -180,25 +198,37 @@ def spoken(text):
     return text.replace(" / ", ". ")
 
 
-def reel_segments(index, post):
-    """List of (frame html, (voice, text) or None, minimum seconds, extra pause seconds)."""
+def reel_items(post):
+    """The items a Reel teaches (the rest stay for the carousel), then the quiz item."""
     *shown, quiz = post["items"]
+    return shown[:REEL_WORDS if post["type"] == "words" else REEL_SENTENCES], quiz
+
+
+def reel_hook(index, post):
+    """Return (variant id, opening question). Variants rotate so their results can be compared."""
+    shown, _ = reel_items(post)
+    variant, question = REEL_HOOKS[post["type"]][index % len(REEL_HOOKS[post["type"]])]
+    return variant, question.format(n=len(shown))
+
+
+def reel_segments(index, post):
+    """List of (frame html, (voice, text), minimum seconds, extra pause seconds, guess timer?)."""
+    shown, quiz = reel_items(post)
     words = post["type"] == "words"
     title_hi = post["title_hi"]
 
     def frame(inner, body_class="rbody"):
         return slide_html(index, "reel", (
-            f'<div class="reelf"><div class="rtop"><div class="rtitle">{e(title_hi)}</div>'
-            f'<div class="pill">{e(post["title_en"])}</div></div>'
-            f'<div class="{body_class}">{inner}</div><div class="rhandle">{HANDLE}</div>'
-            '<div class="rsafe"></div></div>'
+            f'<div class="reelf"><div class="rtop"><div class="rtitle">{e(title_hi)}</div></div>'
+            f'<div class="{body_class}">{inner}</div><div class="rsafe"></div></div>'
         ))
 
-    noun = "ज़रूरी Words" if words else "ज़रूरी Sentences"
+    # Hook: the very first frame (also the Reel's cover) names the topic and asks the question.
+    _, question = reel_hook(index, post)
     segments = [(
-        frame(f'<div class="rkicker">आज सीखिए</div><div class="rcountbig">{len(post["items"])}</div>'
-              f'<div class="rnoun">{noun}</div><div class="rsub">Hindi &rarr; English</div>'),
-        (VOICE_HI, f"आज सीखिए, {title_hi}, इंग्लिश में।"), 2.5, 0.3,
+        slide_html(index, "reel", f'<div class="rhook"><div class="rhooktitle">{e(title_hi)}</div>'
+                                  f'<div class="rhookq">{e(question)}</div></div>'),
+        (VOICE_HI, question.replace("English", "इंग्लिश")), 1.8, 0.2, False,
     )]
 
     for number, item in enumerate(shown, 1):
@@ -213,16 +243,19 @@ def reel_segments(index, post):
                 inner = (f'{progress}<div class="rshi">{e(hi)}</div><div class="rq">English में?</div>'
                          f'<div class="rsen{hid}">{e(en)}</div>')
             voice = (VOICE_EN, spoken(en)) if revealed else (VOICE_HI, hi)
-            minimum = (1.4 if words else 2.2) if revealed else (1.1 if words else 2.0)
-            segments.append((frame(inner), voice, minimum, 0.45 if revealed else 0.3))
+            minimum = (1.4 if words else 2.2) if revealed else (1.7 if words else 2.4)
+            segments.append((frame(inner), voice, minimum, 0.4 if revealed else 0.7, not revealed))
 
-    segments.append((frame(quiz_inner(post), "rbody quizslide"),
-                     (VOICE_HI, "अब आपकी बारी! कमेंट में बताइए।"), 4.0, 1.5))
-    segments.append((
-        frame('<div class="rkicker">रोज़ नई English के लिए</div><div class="rfollow">Follow करें</div>'
-              f'<div class="rbighandle">{HANDLE}</div><div class="rsub">Save करें &middot; Share करें</div>'),
-        (VOICE_HI, "फ़ॉलो कीजिए, डेली इंग्लिश लाइन!"), 2.5, 0.6,
-    ))
+    # Ending: closes the hook's question by asking for the viewer's score, instead of a separate outro.
+    hint_html = f'<div class="qhint nowrap">{e(hint(quiz[1]))}</div>' if words else ""
+    ending = (
+        f'<div class="qbadge">आख़िरी वाला आप बताओ</div>'
+        f'<div class="qhi{"" if words else " sent"}">{e(quiz[0])}</div>{hint_html}'
+        '<div class="qcta">Answer + अपना score Comment करो &darr;</div>'
+        f'<div class="qnote">{HANDLE}</div>'
+    )
+    segments.append((frame(ending, "rbody quizslide"),
+                     (VOICE_HI, "आख़िरी वाला आप बताइए! कमेंट कीजिए।"), 4.0, 1.8, False))
     return segments
 
 
@@ -269,10 +302,18 @@ def trim_silence(mp3, out):
     return out
 
 
-def encode_segment(frame, audio, seconds, out):
+def encode_segment(frame, audio, seconds, out, timer_color=None):
     cmd = [ffmpeg(), "-y", "-loglevel", "error", "-loop", "1", "-framerate", str(FPS), "-i", str(frame)]
     cmd += ["-i", str(audio)] if audio else ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
-    cmd += ["-t", f"{seconds:.2f}", "-vf", "format=yuv420p", "-c:v", "libx264", "-preset", "veryfast",
+    if timer_color:  # a bar that fills across the screen while the viewer guesses
+        width = REEL_SIZE[0]
+        cmd += ["-f", "lavfi", "-i", f"color=c=0x{timer_color.lstrip('#')}:s={width}x{TIMER_HEIGHT}:r={FPS}",
+                "-filter_complex",
+                f"[0:v][2:v]overlay=x='-{width}+{width}*t/{seconds:.2f}':y={TIMER_Y},format=yuv420p[v]",
+                "-map", "[v]", "-map", "1:a"]
+    else:
+        cmd += ["-vf", "format=yuv420p"]
+    cmd += ["-t", f"{seconds:.2f}", "-c:v", "libx264", "-preset", "veryfast",
             "-tune", "stillimage", "-r", str(FPS), "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "2"]
     if audio:
         cmd += ["-af", "apad"]
@@ -333,11 +374,13 @@ def render_reel(index, post, out_dir):
     spoken_ok = asyncio.run(_speak_all(jobs))
 
     clips = []
-    for n, ((_page, _say, minimum, pause), frame, ok, job) in enumerate(zip(segments, frames, spoken_ok, jobs), 1):
+    accent = PALETTES[index % len(PALETTES)][0]
+    for n, ((_page, _say, minimum, pause, timer), frame, ok, job) in enumerate(
+            zip(segments, frames, spoken_ok, jobs), 1):
         audio = trim_silence(job[2], out_dir / f"voice-{n:02d}.wav") if ok else None
         seconds = max(minimum, (duration(audio) if audio else 0) + pause)
         clip = out_dir / f"clip-{n:02d}.mp4"
-        encode_segment(frame, audio, seconds, clip)
+        encode_segment(frame, audio, seconds, clip, accent if timer else None)
         clips.append(clip)
 
     listing = out_dir / "clips.txt"

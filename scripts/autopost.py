@@ -59,11 +59,6 @@ HOOKS = {
         "🔥 Translation Quiz! Last line ka English comment karo 👇",
     ],
 }
-REEL_HOOKS = [
-    "🔊 Sound ON karo aur saath-saath bolo!",
-    "🗣️ Suno, repeat karo, yaad ho jayega!",
-    "⏱️ 1 minute me naye English words seekho!",
-]
 ASKS = [
     "📤 Is post ko us dost ko bhejo jo English improve kar raha hai!",
     "📌 Save kar lo, revision ke time kaam aayega!",
@@ -124,10 +119,12 @@ def build_caption(index, post, prev=None, fmt="carousel"):
 
     if fmt == "reel":
         thing = "word" if words else "sentence"
+        _, question = media.reel_hook(index, post)
         return "\n\n".join([
-            REEL_HOOKS[index % len(REEL_HOOKS)],
-            f"📘 {post['title_hi']} | {post['title_en']}",
-            f"❓ Last {thing} ka English kya hoga? Comment karo 👇\n📝 Poori list aaj shaam 7 baje ke post me!",
+            f"{post['title_hi']}: {question} 👇",
+            f"📘 {post['title_en']} | 🔊 Sound ON karke saath-saath bolo!",
+            f"❓ Aakhri {thing} ka answer aur apna score comment karo 👇\n"
+            "📝 Poori list aaj shaam ke post me, answer agle din ke post me!",
             ask,
             HASHTAGS + REEL_HASHTAGS,
         ])
@@ -287,17 +284,19 @@ def publish(manifest_path, base_url):
     media_id = api("POST", f"{user_id}/media_publish", token, creation_id=cid)["id"]
     print(f"Published! Instagram media id: {media_id}")
 
-    if fmt == "reel":
-        state["reel_posted"] = number
-    else:
-        state["next_index"] = max(state["next_index"], number)
-    state["history"].append({
+    entry = {
         "post": number,
         "type": fmt,
         "title": post["title_hi"],
         "media_id": media_id,
         "posted_at": datetime.now(IST).isoformat(timespec="seconds"),
-    })
+    }
+    if fmt == "reel":
+        state["reel_posted"] = number
+        entry["hook"] = media.reel_hook(index, post)[0]  # to compare hook variants in Insights later
+    else:
+        state["next_index"] = max(state["next_index"], number)
+    state["history"].append(entry)
     save_state(state)
 
 

@@ -4,12 +4,13 @@ Har roz `content/posts.json` ka ek topic **do baar** post hota hai (GitHub Actio
 
 | Time (IST) | Format | Kya hota hai |
 |---|---|---|
-| **1:00 PM** | **Reel** (9:16 video, ~35–45 sec) | Hindi word dikhta hai aur Hindi AI voice use bolti hai, phir English reveal hota hai aur English AI voice use bolti hai. Aakhir me quiz aur Follow ka message. |
+| **1:00 PM** | **Reel** (9:16 video, ~25–35 sec) | Pehle frame par topic ke saath sawaal (hook). Phir 6 words ya 5 sentences: Hindi AI voice ke saath guess karne ka timer bar, phir English reveal aur English AI voice. Ending: aakhri item ka answer aur apna score comment karne ko kehta hai. |
 | **7:00 PM** | **Carousel** (6 slides) | Cover → 3 detail slides → Quiz slide → poori list (revision ke liye). Iske baad agla topic shuru hota hai. |
 
 `state.json` yaad rakhta hai ki kaunsa topic chal raha hai aur us topic ki Reel ho chuki hai ya nahi.
 
-**Engagement ke liye:** har topic ka aakhri item ek **quiz** hota hai. Reel, slides aur caption me uska English chhupa rehta hai (sirf hint dikhta hai, jaise `B _ _ _ _ _`), aur log answer comment karte hain. Agle topic ka carousel caption "✅ Pichhle quiz ka answer…" se shuru hota hai. Hooks aur share/save wale prompts roz badalte hain. Inhe `scripts/autopost.py` me `HOOKS`, `REEL_HOOKS` aur `ASKS` me edit kar sakte hain.
+**Engagement ke liye:** har topic ka aakhri item ek **quiz** hota hai. Reel, slides aur caption me uska English chhupa rehta hai (sirf hint dikhta hai, jaise `B _ _ _ _ _`), aur log answer comment karte hain. Agle topic ka carousel caption "✅ Pichhle quiz ka answer…" se shuru hota hai. Hooks aur share/save wale prompts roz badalte hain. Inhe `scripts/autopost.py` me `HOOKS` aur `ASKS`, aur `scripts/media.py` me `REEL_HOOKS` me edit kar sakte hain.
+Reel hooks ke 3 variants (`question`, `score`, `problem`) rotate hote hain, aur har Reel ka variant `state.json` ke `history` me `hook` ke roop me save hota hai, taaki Instagram Insights se compare kar sakein.
 Kisi din ka caption dekhne ke liye: `python scripts/autopost.py caption --index 5 --format reel`
 
 **AI voice:** Microsoft ki free text-to-speech (`edge-tts`) use hoti hai, isliye koi key nahi chahiye. Voice badalni ho to workflow me `TTS_VOICE_HI` / `TTS_VOICE_EN` env set karein (default `hi-IN-SwaraNeural`, `en-IN-NeerjaNeural`). Agar voice service kabhi na chale to Reel bina awaaz ke ban jaati hai, post nahi rukta.
