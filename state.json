@@ -1,5 +1,5 @@
 {
-  "next_index": 3,
+  "next_index": 4,
   "history": [
     {
       "post": 1,
@@ -41,6 +41,13 @@
       "title": "शरीर के अंग",
       "media_id": "18109952384193895",
       "posted_at": "2026-11-03T14:02:03+05:30"
+    },
+    {
+      "post": 4,
+      "type": "carousel",
+      "title": "शरीर के अंग",
+      "media_id": "18129358036861769",
+      "posted_at": "2026-11-03T19:59:38+05:30"
     }
   ],
   "reel_posted": 4
