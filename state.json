@@ -1,5 +1,5 @@
 {
-  "next_index": 4,
+  "next_index": 5,
   "history": [
     {
       "post": 1,
@@ -56,6 +56,13 @@
       "media_id": "18162450061537870",
       "posted_at": "2026-11-04T14:02:20+05:30",
       "hook": "score"
+    },
+    {
+      "post": 5,
+      "type": "carousel",
+      "title": "सब्ज़ियों के नाम",
+      "media_id": "17901717276397552",
+      "posted_at": "2026-11-04T20:01:41+05:30"
     }
   ],
   "reel_posted": 5
