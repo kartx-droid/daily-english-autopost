@@ -1,5 +1,5 @@
 {
-  "next_index": 5,
+  "next_index": 6,
   "history": [
     {
       "post": 1,
@@ -71,6 +71,13 @@
       "media_id": "18122100665057147",
       "posted_at": "2026-11-05T14:04:23+05:30",
       "hook": "problem"
+    },
+    {
+      "post": 6,
+      "type": "carousel",
+      "title": "घर पर बोले जाने वाले वाक्य",
+      "media_id": "18023427941946347",
+      "posted_at": "2026-11-05T20:01:48+05:30"
     }
   ],
   "reel_posted": 6
