@@ -1,5 +1,5 @@
 {
-  "next_index": 6,
+  "next_index": 7,
   "history": [
     {
       "post": 1,
@@ -86,6 +86,13 @@
       "media_id": "18451608385132654",
       "posted_at": "2026-11-06T14:01:20+05:30",
       "hook": "question"
+    },
+    {
+      "post": 7,
+      "type": "carousel",
+      "title": "फलों के नाम",
+      "media_id": "18060599054563382",
+      "posted_at": "2026-11-06T20:01:27+05:30"
     }
   ],
   "reel_posted": 7
