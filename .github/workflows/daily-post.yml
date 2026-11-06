@@ -3,7 +3,7 @@ name: Daily Instagram post
 on:
   schedule:
     - cron: "30 7 * * *"  # 07:30 UTC = 1:00 PM IST -> Reel
-    - cron: "30 13 * * *" # 13:30 UTC = 7:00 PM IST -> Carousel (then moves to the next topic)
+    - cron: "30 13 * * *" # 13:30 UTC = 7:00 PM IST -> Carousel (each post takes the next unused topic)
   workflow_dispatch:
     inputs:
       format:
@@ -52,7 +52,7 @@ jobs:
 
       - name: Render today's ${{ env.FORMAT }}
         id: render
-        run: python scripts/autopost.py render --format "$FORMAT"
+        run: python scripts/autopost.py render --format "$FORMAT" ${{ github.event_name == 'schedule' && '--once-per-day' || '' }}
 
       - name: Upload preview
         if: steps.render.outputs.skip != 'true'

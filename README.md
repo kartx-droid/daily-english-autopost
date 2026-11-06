@@ -1,21 +1,21 @@
 # @daily.english.line: Daily Auto Post
 
-Har roz `content/posts.json` ka ek topic **do baar** post hota hai (GitHub Actions se):
+Har roz **do alag topics** post hote hain (GitHub Actions se). Har post `content/posts.json` ka agla unused topic leta hai, isliye Reel aur Carousel ka content kabhi same nahi hota:
 
 | Time (IST) | Format | Kya hota hai |
 |---|---|---|
 | **1:00 PM** | **Reel** (9:16 video, ~25–35 sec) | Pehle frame par topic ke saath sawaal (hook). Phir 6 words ya 5 sentences: Hindi AI voice ke saath guess karne ka timer bar, phir English reveal aur English AI voice. Ending: aakhri item ka answer aur apna score comment karne ko kehta hai. |
-| **7:00 PM** | **Carousel** (6 slides) | Cover → 3 detail slides → Quiz slide → poori list (revision ke liye). Iske baad agla topic shuru hota hai. |
+| **7:00 PM** | **Carousel** (6 slides) | Cover → 3 detail slides → Quiz slide → poori list (revision ke liye). |
 
-`state.json` yaad rakhta hai ki kaunsa topic chal raha hai aur us topic ki Reel ho chuki hai ya nahi.
+`state.json` yaad rakhta hai ki agla kaunsa topic hai. Reel me 6 words ya 5 sentences aate hain, aur poori list uske caption me hoti hai. Scheduled run din me ek format ek hi baar post karta hai.
 
-**Engagement ke liye:** har topic ka aakhri item ek **quiz** hota hai. Reel, slides aur caption me uska English chhupa rehta hai (sirf hint dikhta hai, jaise `B _ _ _ _ _`), aur log answer comment karte hain. Agle topic ka carousel caption "✅ Pichhle quiz ka answer…" se shuru hota hai. Hooks aur share/save wale prompts roz badalte hain. Inhe `scripts/autopost.py` me `HOOKS` aur `ASKS`, aur `scripts/media.py` me `REEL_HOOKS` me edit kar sakte hain.
+**Engagement ke liye:** har topic ka aakhri item ek **quiz** hota hai. Reel, slides aur caption me uska English chhupa rehta hai (sirf hint dikhta hai, jaise `B _ _ _ _ _`), aur log answer comment karte hain. Agle post ka caption "✅ Pichhle quiz ka answer…" dikhata hai. Hooks aur share/save wale prompts roz badalte hain. Inhe `scripts/autopost.py` me `HOOKS` aur `ASKS`, aur `scripts/media.py` me `REEL_HOOKS` me edit kar sakte hain.
 Reel hooks ke 3 variants (`question`, `score`, `problem`) rotate hote hain, aur har Reel ka variant `state.json` ke `history` me `hook` ke roop me save hota hai, taaki Instagram Insights se compare kar sakein.
 Kisi din ka caption dekhne ke liye: `python scripts/autopost.py caption --index 5 --format reel`
 
 **AI voice:** Microsoft ki free text-to-speech (`edge-tts`) use hoti hai, isliye koi key nahi chahiye. Voice badalni ho to workflow me `TTS_VOICE_HI` / `TTS_VOICE_EN` env set karein (default `hi-IN-SwaraNeural`, `en-IN-NeerjaNeural`). Agar voice service kabhi na chale to Reel bina awaaz ke ban jaati hai, post nahi rukta.
 
-Content bank me **60 posts** hain (40 vocabulary + 20 sentences). Yeh lagbhag 2 mahine chalenge.
+Content bank me **60 topics** hain (40 vocabulary + 20 sentences). Roz 2 topics jaate hain, isliye 60 topics 30 din chalte hain.
 
 ---
 

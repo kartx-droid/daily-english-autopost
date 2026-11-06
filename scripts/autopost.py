@@ -1,7 +1,7 @@
 """Daily Instagram autoposter for @daily.english.line.
 
-Each day's topic (content/posts.json, next one per state.json) is posted twice:
-a Reel around midday and a carousel in the evening. The carousel advances to the next topic.
+Every post uses the next unused topic from content/posts.json (tracked in state.json), so the
+midday Reel and the evening carousel never share content.
 
 Subcommands:
   render   Render today's media for a format (image | carousel | reel) and write a manifest.
@@ -45,7 +45,7 @@ HASHTAGS = (
 REEL_HASHTAGS = " #reels #reelsindia #englishreels #learnenglishwithreels"
 
 # The last item of every post is a quiz: its English is hidden in the media and caption,
-# and revealed at the top of the next topic's carousel caption. Prompts rotate so captions don't repeat.
+# and revealed at the top of the next post's caption. Prompts rotate so captions don't repeat.
 HOOKS = {
     "words": [
         "🧠 Aaj ka Challenge: Last word ka English kya hoga? Comment karo 👇",
@@ -117,18 +117,6 @@ def build_caption(index, post, prev=None, fmt="carousel"):
     words = post["type"] == "words"
     ask = ASKS[index % len(ASKS)] + f"\n➕ Roz English seekhne ke liye follow karein {HANDLE}"
 
-    if fmt == "reel":
-        thing = "word" if words else "sentence"
-        _, question = media.reel_hook(index, post)
-        return "\n\n".join([
-            f"{post['title_hi']}: {question} 👇",
-            f"📘 {post['title_en']} | 🔊 Sound ON karke saath-saath bolo!",
-            f"❓ Aakhri {thing} ka answer aur apna score comment karo 👇\n"
-            "📝 Poori list aaj shaam ke post me, answer agle din ke post me!",
-            ask,
-            HASHTAGS + REEL_HASHTAGS,
-        ])
-
     if words:
         lines = [f"• {hi} → {en} ({pron})" for hi, en, pron in shown]
         quiz_line = f"❓ {quiz[0]} → ?  (Hint: {media.hint(quiz[1])})"
@@ -136,11 +124,25 @@ def build_caption(index, post, prev=None, fmt="carousel"):
         lines = [f"• {hi}\n   ➜ {en}" for hi, en in shown]
         quiz_line = f"❓ {quiz[0]}\n   ➜ ? (English me translate karo)"
 
-    hooks = HOOKS[post["type"]]
-    parts = [hooks[index % len(hooks)]]
+    reveal = []
     if prev:
         hi, en = prev["items"][-1][:2]
-        parts.append(f"✅ Pichhle quiz ka answer: {hi} → {en}\nSahi bataya tha? 😎")
+        reveal.append(f"✅ Pichhle quiz ka answer: {hi} → {en}\nSahi bataya tha? 😎")
+
+    if fmt == "reel":
+        # The Reel teaches only some items, and this topic isn't posted again, so the caption has them all.
+        _, question = media.reel_hook(index, post)
+        return "\n\n".join([
+            f"{post['title_hi']}: {question} 👇",
+            *reveal,
+            f"📘 {post['title_en']} | 🔊 Sound ON karke saath-saath bolo!\n\nPoori list:\n" + "\n".join(lines),
+            quiz_line + "\n👉 Answer aur apna score comment karo, sahi answer agle post me milega!",
+            ask,
+            HASHTAGS + REEL_HASHTAGS,
+        ])
+
+    hooks = HOOKS[post["type"]]
+    parts = [hooks[index % len(hooks)], *reveal]
     parts += [
         f"📘 {post['title_hi']} | {post['title_en']}\n\n" + "\n".join(lines),
         quiz_line + "\n👉 Answer comment karo, sahi answer agle post me milega!",
@@ -152,15 +154,16 @@ def build_caption(index, post, prev=None, fmt="carousel"):
 
 # ---------- render ----------
 
-def render(fmt, index):
+def render(fmt, index, once_per_day=False):
     state = load_state()
-    forced = index is not None
     index, post = pick_post(index)
     number = index + 1
     set_output("index", index)
 
-    if fmt == "reel" and not forced and state.get("reel_posted") == number:
-        print(f"Reel for post {number} already published today; skipping.")
+    # A scheduled run skips if this format already went out today (e.g. from a manual run).
+    today = datetime.now(IST).date().isoformat()
+    if once_per_day and any(e.get("type") == fmt and e["posted_at"].startswith(today) for e in state["history"]):
+        print(f"A {fmt} was already published today; skipping.")
         set_output("skip", "true")
         return
 
@@ -292,10 +295,8 @@ def publish(manifest_path, base_url):
         "posted_at": datetime.now(IST).isoformat(timespec="seconds"),
     }
     if fmt == "reel":
-        state["reel_posted"] = number
         entry["hook"] = media.reel_hook(index, post)[0]  # to compare hook variants in Insights later
-    else:
-        state["next_index"] = max(state["next_index"], number)
+    state["next_index"] = max(state["next_index"], number)
     state["history"].append(entry)
     save_state(state)
 
@@ -325,7 +326,8 @@ def main():
     sub = parser.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("render")
     r.add_argument("--format", choices=FORMATS, default="carousel")
-    r.add_argument("--index", type=int, help="0-based post index (default: today's topic)")
+    r.add_argument("--index", type=int, help="0-based post index (default: next unused topic)")
+    r.add_argument("--once-per-day", action="store_true", help="skip if this format already posted today")
     p = sub.add_parser("publish")
     p.add_argument("--manifest", required=True, help="manifest.json written by render")
     p.add_argument("--base-url", help="public URL prefix of the repo files (image/carousel only)")
@@ -338,7 +340,7 @@ def main():
     args = parser.parse_args()
 
     if args.cmd == "render":
-        render(args.format, args.index)
+        render(args.format, args.index, args.once_per_day)
     elif args.cmd == "publish":
         publish(args.manifest, args.base_url)
     elif args.cmd == "check":

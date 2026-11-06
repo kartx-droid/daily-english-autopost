@@ -21,7 +21,7 @@ FPS = 30
 VOICE_HI = os.environ.get("TTS_VOICE_HI", "hi-IN-SwaraNeural")
 VOICE_EN = os.environ.get("TTS_VOICE_EN", "en-IN-NeerjaNeural")
 
-# Reels stay short: they teach only some items, and the full list is in the carousel.
+# Reels stay short: they teach only some items, and the full list is in the Reel's caption.
 REEL_WORDS = 6
 REEL_SENTENCES = 5
 REEL_HOOKS = {
@@ -199,7 +199,7 @@ def spoken(text):
 
 
 def reel_items(post):
-    """The items a Reel teaches (the rest stay for the carousel), then the quiz item."""
+    """The items a Reel teaches (the rest are in its caption), then the quiz item."""
     *shown, quiz = post["items"]
     return shown[:REEL_WORDS if post["type"] == "words" else REEL_SENTENCES], quiz
 
