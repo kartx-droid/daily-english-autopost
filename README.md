@@ -15,7 +15,7 @@ Kisi din ka caption dekhne ke liye: `python scripts/autopost.py caption --index 
 
 **AI voice:** Microsoft ki free text-to-speech (`edge-tts`) use hoti hai, isliye koi key nahi chahiye. Voice badalni ho to workflow me `TTS_VOICE_HI` / `TTS_VOICE_EN` env set karein (default `hi-IN-SwaraNeural`, `en-IN-NeerjaNeural`). Agar voice service kabhi na chale to Reel bina awaaz ke ban jaati hai, post nahi rukta.
 
-Content bank me **60 topics** hain (40 vocabulary + 20 sentences). Roz 2 topics jaate hain, isliye 60 topics 30 din chalte hain.
+Content bank me **120 topics** hain (80 vocabulary + 40 sentences). Roz 2 topics jaate hain, isliye 120 topics 60 din chalte hain.
 
 ---
 

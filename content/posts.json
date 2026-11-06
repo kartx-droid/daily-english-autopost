@@ -218,5 +218,225 @@
     ["आज बहुत तेज़ बारिश हो रही है।", "It's raining heavily today."], ["मैं पूरा भीग गया।", "I got drenched."],
     ["छाता खोल लो।", "Open the umbrella."], ["सड़क पर पानी भर गया है।", "The road is waterlogged."],
     ["बिजली कड़क रही है।", "It's thundering."], ["चलो, पकौड़े बनाते हैं।", "Let's make pakoras."],
-    ["बारिश रुकने का इंतज़ार करते हैं।", "Let's wait for the rain to stop."], ["मौसम बहुत सुहाना है।", "The weather is very pleasant."]]}
+    ["बारिश रुकने का इंतज़ार करते हैं।", "Let's wait for the rain to stop."], ["मौसम बहुत सुहाना है।", "The weather is very pleasant."]]},
+  {"type": "words", "title_hi": "रंगों के नाम", "title_en": "Colours", "items": [
+    ["बैंगनी", "Purple", "पर्पल"], ["गुलाबी", "Pink", "पिंक"], ["नारंगी", "Orange", "ऑरेंज"], ["भूरा", "Brown", "ब्राउन"], ["स्लेटी", "Grey", "ग्रे"],
+    ["आसमानी", "Sky blue", "स्काई ब्लू"], ["सुनहरा", "Golden", "गोल्डन"], ["गहरा लाल", "Maroon", "मरून"], ["बादामी", "Beige", "बेज"], ["फ़िरोज़ी", "Turquoise", "टर्कॉइज़"]]},
+  {"type": "words", "title_hi": "आकारों के नाम", "title_en": "Shapes", "items": [
+    ["वृत्त", "Circle", "सर्कल"], ["वर्ग", "Square", "स्क्वेयर"], ["त्रिभुज", "Triangle", "ट्राइऐंगल"], ["आयत", "Rectangle", "रेक्टैंगल"], ["अंडाकार", "Oval", "ओवल"],
+    ["घन", "Cube", "क्यूब"], ["गोला", "Sphere", "स्फ़ियर"], ["शंकु", "Cone", "कोन"], ["बेलनाकार", "Cylinder", "सिलिंडर"], ["षट्भुज", "Hexagon", "हेक्सागन"]]},
+  {"type": "sentences", "title_hi": "बैंक में", "title_en": "At the Bank", "items": [
+    ["मुझे खाता खुलवाना है।", "I want to open an account."], ["मुझे पैसे निकालने हैं।", "I want to withdraw money."],
+    ["मेरी पासबुक अपडेट कर दीजिए।", "Please update my passbook."], ["मेरा एटीएम कार्ड काम नहीं कर रहा।", "My ATM card is not working."],
+    ["क्या मुझे कोई फ़ॉर्म भरना होगा?", "Do I need to fill out a form?"], ["मेरे खाते में कितने पैसे हैं?", "How much money is in my account?"],
+    ["मुझे यह चेक जमा करना है।", "I want to deposit this cheque."], ["मुझे लोन चाहिए।", "I need a loan."]]},
+  {"type": "words", "title_hi": "पानी के जीव", "title_en": "Water Animals", "items": [
+    ["मछली", "Fish", "फ़िश"], ["मगरमच्छ", "Crocodile", "क्रोकोडाइल"], ["कछुआ", "Turtle", "टर्टल"], ["मेंढक", "Frog", "फ्रॉग"], ["केकड़ा", "Crab", "क्रैब"],
+    ["झींगा", "Prawn", "प्रॉन"], ["सीप", "Oyster", "ऑयस्टर"], ["घोंघा", "Snail", "स्नेल"], ["ऊदबिलाव", "Otter", "ऑटर"], ["दरियाई घोड़ा", "Hippopotamus", "हिपोपॉटमस"]]},
+  {"type": "words", "title_hi": "गहनों के नाम", "title_en": "Jewellery", "items": [
+    ["अँगूठी", "Ring", "रिंग"], ["हार", "Necklace", "नेकलेस"], ["झुमका", "Earring", "ईयररिंग"], ["चूड़ी", "Bangle", "बैंगल"], ["पायल", "Anklet", "ऐंकलेट"],
+    ["कंगन", "Bracelet", "ब्रेसलेट"], ["नथ", "Nose ring", "नोज़ रिंग"], ["बिछिया", "Toe ring", "टो रिंग"], ["मुकुट", "Crown", "क्राउन"], ["मोती", "Pearl", "पर्ल"]]},
+  {"type": "sentences", "title_hi": "रास्ता पूछना", "title_en": "Asking for Directions", "items": [
+    ["माफ़ कीजिए, बस स्टैंड कहाँ है?", "Excuse me, where is the bus stand?"], ["सीधे जाइए।", "Go straight."],
+    ["अगले चौराहे से बाएँ मुड़िए।", "Turn left at the next crossing."], ["क्या यहाँ पास में कोई एटीएम है?", "Is there an ATM nearby?"],
+    ["मैं रास्ता भूल गया हूँ।", "I have lost my way."], ["क्या हम पैदल जा सकते हैं?", "Can we go on foot?"],
+    ["यह सड़क के उस पार है।", "It is across the road."], ["मुझे नक्शे पर दिखाइए।", "Please show me on the map."]]},
+  {"type": "words", "title_hi": "गाँव और खेती", "title_en": "Village & Farming", "items": [
+    ["किसान", "Farmer", "फ़ार्मर"], ["खेत", "Field", "फ़ील्ड"], ["हल", "Plough", "प्लाउ"], ["फ़सल", "Crop", "क्रॉप"], ["बीज", "Seed", "सीड"],
+    ["खाद", "Fertilizer", "फ़र्टिलाइज़र"], ["कुआँ", "Well", "वेल"], ["सिंचाई", "Irrigation", "इरिगेशन"], ["कटाई", "Harvest", "हार्वेस्ट"], ["बिजूका", "Scarecrow", "स्केयरक्रो"]]},
+  {"type": "words", "title_hi": "बातचीत के Verbs", "title_en": "Talking Verbs", "items": [
+    ["पूछना", "Ask", "आस्क"], ["बताना", "Tell", "टेल"], ["समझाना", "Explain", "एक्सप्लेन"], ["सहमत होना", "Agree", "अग्री"], ["मना करना", "Refuse", "रिफ़्यूज़"],
+    ["शिकायत करना", "Complain", "कम्प्लेन"], ["तारीफ़ करना", "Praise", "प्रेज़"], ["बहस करना", "Argue", "आर्ग्यू"], ["वादा करना", "Promise", "प्रॉमिस"], ["फुसफुसाना", "Whisper", "व्हिस्पर"]]},
+  {"type": "sentences", "title_hi": "ऑटो और कैब में", "title_en": "In an Auto or Cab", "items": [
+    ["भैया, स्टेशन चलोगे?", "Will you go to the station?"], ["कितने पैसे लगेंगे?", "How much will it cost?"],
+    ["मीटर से चलिए।", "Please go by the meter."], ["थोड़ा तेज़ चलाइए।", "Please drive a little faster."],
+    ["आगे से दाएँ ले लीजिए।", "Take a right up ahead."], ["मेरे पास खुले पैसे नहीं हैं।", "I don't have change."],
+    ["एसी चला दीजिए।", "Please turn on the AC."], ["यहीं रोक दीजिए।", "Please stop here."]]},
+  {"type": "words", "title_hi": "नहाने-धोने की चीज़ें", "title_en": "Bathroom Items", "items": [
+    ["साबुन", "Soap", "सोप"], ["तौलिया", "Towel", "टॉवल"], ["दंत मंजन", "Toothpaste", "टूथपेस्ट"], ["नल", "Tap", "टैप"], ["उस्तरा", "Razor", "रेज़र"],
+    ["फ़व्वारा", "Shower", "शावर"], ["नाली", "Drain", "ड्रेन"], ["मग", "Mug", "मग"], ["बालों का तेल", "Hair oil", "हेयर ऑयल"], ["कंघी", "Comb", "कोम"]]},
+  {"type": "words", "title_hi": "फूलों के नाम", "title_en": "Flowers", "items": [
+    ["गुलाब", "Rose", "रोज़"], ["कमल", "Lotus", "लोटस"], ["गेंदा", "Marigold", "मैरीगोल्ड"], ["चमेली", "Jasmine", "जैस्मिन"], ["सूरजमुखी", "Sunflower", "सनफ़्लावर"],
+    ["गुड़हल", "Hibiscus", "हिबिस्कस"], ["कुमुदिनी", "Water lily", "वॉटर लिली"], ["रजनीगंधा", "Tuberose", "ट्यूबरोज़"], ["गुलदाउदी", "Chrysanthemum", "क्रिसैन्थमम"], ["पंखुड़ी", "Petal", "पेटल"]]},
+  {"type": "sentences", "title_hi": "रेलवे स्टेशन पर", "title_en": "At the Station", "items": [
+    ["टिकट खिड़की कहाँ है?", "Where is the ticket counter?"], ["ट्रेन किस प्लेटफ़ॉर्म पर आएगी?", "Which platform will the train arrive on?"],
+    ["ट्रेन कितनी लेट है?", "How late is the train?"], ["मेरी सीट कन्फ़र्म नहीं हुई।", "My seat is not confirmed."],
+    ["यह मेरी सीट है।", "This is my seat."], ["दिल्ली का एक टिकट दीजिए।", "One ticket to Delhi, please."],
+    ["क्या यह ट्रेन जयपुर जाती है?", "Does this train go to Jaipur?"], ["ट्रेन रद्द हो गई है।", "The train has been cancelled."]]},
+  {"type": "words", "title_hi": "गणित के शब्द", "title_en": "Maths Words", "items": [
+    ["जोड़", "Addition", "ऐडिशन"], ["घटाव", "Subtraction", "सबट्रैक्शन"], ["गुणा", "Multiplication", "मल्टिप्लिकेशन"], ["भाग", "Division", "डिविज़न"], ["भिन्न", "Fraction", "फ़्रैक्शन"],
+    ["प्रतिशत", "Percentage", "परसेंटेज"], ["औसत", "Average", "ऐवरेज"], ["समीकरण", "Equation", "इक्वेशन"], ["वर्गमूल", "Square root", "स्क्वेयर रूट"], ["दशमलव", "Decimal", "डेसिमल"]]},
+  {"type": "words", "title_hi": "खाने-पीने की चीज़ें", "title_en": "Food Items", "items": [
+    ["अचार", "Pickle", "पिकल"], ["शहद", "Honey", "हनी"], ["अंडा", "Egg", "एग"], ["मलाई", "Cream", "क्रीम"], ["पनीर", "Cottage cheese", "कॉटेज चीज़"],
+    ["छाछ", "Buttermilk", "बटरमिल्क"], ["मिठाई", "Sweets", "स्वीट्स"], ["सेवई", "Vermicelli", "वर्मिसेली"], ["खीर", "Rice pudding", "राइस पुडिंग"], ["नींबू पानी", "Lemonade", "लेमनेड"]]},
+  {"type": "sentences", "title_hi": "होटल में", "title_en": "At the Hotel", "items": [
+    ["मैंने एक कमरा बुक किया था।", "I had booked a room."], ["चेक-आउट कितने बजे है?", "What is the check-out time?"],
+    ["क्या नाश्ता शामिल है?", "Is breakfast included?"], ["कमरे का एसी काम नहीं कर रहा।", "The AC in my room is not working."],
+    ["मुझे एक और तौलिया चाहिए।", "I need one more towel."], ["वाई-फ़ाई का पासवर्ड क्या है?", "What is the Wi-Fi password?"],
+    ["मुझे सुबह छह बजे जगा दीजिए।", "Please wake me up at six in the morning."], ["क्या कोई कमरा खाली है?", "Is any room available?"]]},
+  {"type": "words", "title_hi": "शरीर के अंदरूनी अंग", "title_en": "Inside the Body", "items": [
+    ["दिल", "Heart", "हार्ट"], ["फेफड़े", "Lungs", "लंग्स"], ["जिगर", "Liver", "लिवर"], ["गुर्दा", "Kidney", "किडनी"], ["आँत", "Intestine", "इंटेस्टिन"],
+    ["दिमाग़", "Brain", "ब्रेन"], ["हड्डी", "Bone", "बोन"], ["नस", "Vein", "वेन"], ["मांसपेशी", "Muscle", "मसल"], ["खोपड़ी", "Skull", "स्कल"]]},
+  {"type": "words", "title_hi": "बिस्तर और घर की सजावट", "title_en": "Home Furnishings", "items": [
+    ["गद्दा", "Mattress", "मैट्रेस"], ["कंबल", "Blanket", "ब्लैंकेट"], ["रज़ाई", "Quilt", "क्विल्ट"], ["परदा", "Curtain", "कर्टन"], ["कालीन", "Carpet", "कारपेट"],
+    ["कुर्सी", "Chair", "चेयर"], ["फूलदान", "Vase", "वेज़"], ["दीवार घड़ी", "Wall clock", "वॉल क्लॉक"], ["मेज़पोश", "Tablecloth", "टेबलक्लॉथ"], ["दरी", "Rug", "रग"]]},
+  {"type": "sentences", "title_hi": "प्लान बनाना", "title_en": "Making Plans", "items": [
+    ["इस रविवार को क्या कर रहे हो?", "What are you doing this Sunday?"], ["चलो, फ़िल्म देखने चलते हैं।", "Let's go and watch a movie."],
+    ["तुम कब फ़्री हो?", "When are you free?"], ["हम कहाँ मिलें?", "Where shall we meet?"],
+    ["मैं तुम्हें शाम को लेने आऊँगा।", "I will pick you up in the evening."], ["मुझे आज समय नहीं मिलेगा।", "I won't get time today."],
+    ["इसे कल कर लेते हैं।", "Let's do it tomorrow."], ["मैं सात बजे तक पहुँच जाऊँगा।", "I will reach by seven."]]},
+  {"type": "words", "title_hi": "महसूस करने के शब्द", "title_en": "Feeling Words", "items": [
+    ["थका हुआ", "Tired", "टायर्ड"], ["भूखा", "Hungry", "हंग्री"], ["प्यासा", "Thirsty", "थर्स्टी"], ["ऊबा हुआ", "Bored", "बोर्ड"], ["उलझन में", "Confused", "कन्फ़्यूज़्ड"],
+    ["उत्साहित", "Excited", "एक्साइटेड"], ["घबराया हुआ", "Nervous", "नर्वस"], ["शांत", "Calm", "काम"], ["आभारी", "Grateful", "ग्रेटफ़ुल"], ["निराश", "Disappointed", "डिसअपॉइंटेड"]]},
+  {"type": "words", "title_hi": "सूखे मेवे", "title_en": "Dry Fruits", "items": [
+    ["बादाम", "Almond", "आमंड"], ["काजू", "Cashew", "कैश्यू"], ["किशमिश", "Raisin", "रेज़िन"], ["अखरोट", "Walnut", "वॉलनट"], ["पिस्ता", "Pistachio", "पिस्टैशियो"],
+    ["खजूर", "Date", "डेट"], ["खुबानी", "Apricot", "एप्रिकॉट"], ["नारियल", "Coconut", "कोकोनट"], ["चिलगोज़ा", "Pine nut", "पाइन नट"], ["मखाना", "Fox nut", "फ़ॉक्स नट"]]},
+  {"type": "sentences", "title_hi": "मदद माँगना", "title_en": "Asking for Help", "items": [
+    ["क्या आप मेरी मदद कर सकते हैं?", "Can you help me?"], ["क्या आप इसे थोड़ी देर पकड़ेंगे?", "Could you hold this for a moment?"],
+    ["मुझे आपकी सलाह चाहिए।", "I need your advice."], ["मुझे यह फ़ॉर्म भरना नहीं आता।", "I don't know how to fill this form."],
+    ["क्या मैं आपके फ़ोन से एक कॉल कर सकता हूँ?", "Can I make a call from your phone?"], ["मेरा बैग बहुत भारी है, थोड़ी मदद कीजिए।", "My bag is very heavy, please help."],
+    ["मुझे बस एक मिनट चाहिए।", "I just need a minute."], ["मुझे आपकी मदद की ज़रूरत है।", "I need your help."]]},
+  {"type": "words", "title_hi": "उल्टे अर्थ वाले शब्द", "title_en": "Opposite Words", "items": [
+    ["अमीर", "Rich", "रिच"], ["ग़रीब", "Poor", "पुअर"], ["मज़बूत", "Strong", "स्ट्रॉन्ग"], ["कमज़ोर", "Weak", "वीक"], ["चौड़ा", "Wide", "वाइड"],
+    ["सँकरा", "Narrow", "नैरो"], ["साफ़", "Clean", "क्लीन"], ["गंदा", "Dirty", "डर्टी"], ["सस्ता", "Cheap", "चीप"], ["महँगा", "Expensive", "एक्सपेंसिव"]]},
+  {"type": "words", "title_hi": "शहर की जगहें", "title_en": "Places in a City", "items": [
+    ["डाकघर", "Post office", "पोस्ट ऑफ़िस"], ["पुस्तकालय", "Library", "लाइब्रेरी"], ["संग्रहालय", "Museum", "म्यूज़ियम"], ["चिड़ियाघर", "Zoo", "ज़ू"], ["कारख़ाना", "Factory", "फ़ैक्ट्री"],
+    ["थाना", "Police station", "पुलिस स्टेशन"], ["मंदिर", "Temple", "टेम्पल"], ["बाज़ार", "Market", "मार्केट"], ["बस अड्डा", "Bus stand", "बस स्टैंड"], ["गोदाम", "Warehouse", "वेयरहाउस"]]},
+  {"type": "sentences", "title_hi": "विनम्रता से बोलना", "title_en": "Polite Requests", "items": [
+    ["क्या मैं अंदर आ सकता हूँ?", "May I come in?"], ["कृपया दरवाज़ा बंद कर दीजिए।", "Please close the door."],
+    ["क्या आप थोड़ा रुक सकते हैं?", "Could you wait a moment?"], ["क्या मैं आपका पेन ले सकता हूँ?", "May I borrow your pen?"],
+    ["क्या आप थोड़ा खिसक सकते हैं?", "Could you move a little?"], ["कृपया फिर से बोलिए।", "Please say that again."],
+    ["क्या मैं यहाँ बैठ सकता हूँ?", "May I sit here?"], ["क्या मैं एक सवाल पूछ सकता हूँ?", "May I ask a question?"]]},
+  {"type": "words", "title_hi": "हाथ-पैर के हिस्से", "title_en": "Hands & Legs", "items": [
+    ["हथेली", "Palm", "पाम"], ["उँगली", "Finger", "फ़िंगर"], ["अँगूठा", "Thumb", "थम"], ["नाखून", "Fingernail", "फ़िंगरनेल"], ["मुट्ठी", "Fist", "फ़िस्ट"],
+    ["घुटना", "Knee", "नी"], ["जाँघ", "Thigh", "थाई"], ["पिंडली", "Calf", "काफ़"], ["टखना", "Ankle", "ऐंकल"], ["तलवा", "Sole", "सोल"]]},
+  {"type": "words", "title_hi": "सवारियों के नाम", "title_en": "Vehicles", "items": [
+    ["साइकिल", "Bicycle", "बाइसिकल"], ["हवाई जहाज़", "Aeroplane", "एरोप्लेन"], ["नाव", "Boat", "बोट"], ["पानी का जहाज़", "Ship", "शिप"], ["रेलगाड़ी", "Train", "ट्रेन"],
+    ["दमकल", "Fire engine", "फ़ायर इंजन"], ["पनडुब्बी", "Submarine", "सबमरीन"], ["बैलगाड़ी", "Bullock cart", "बुलक कार्ट"], ["तांगा", "Horse cart", "हॉर्स कार्ट"], ["पालकी", "Palanquin", "पैलंकीन"]]},
+  {"type": "sentences", "title_hi": "ऑनलाइन ऑर्डर", "title_en": "Online Orders", "items": [
+    ["मेरा पार्सल अभी तक नहीं आया।", "My parcel has not arrived yet."], ["मुझे यह सामान वापस करना है।", "I want to return this item."],
+    ["मुझे ग़लत साइज़ मिला है।", "I received the wrong size."], ["मेरे पैसे कब वापस आएँगे?", "When will I get my refund?"],
+    ["डिलीवरी कब तक हो जाएगी?", "When will it be delivered?"], ["क्या कैश ऑन डिलीवरी है?", "Is cash on delivery available?"],
+    ["पार्सल गेट पर छोड़ दीजिए।", "Please leave the parcel at the gate."], ["मेरा पार्सल टूटा हुआ आया है।", "My parcel arrived damaged."]]},
+  {"type": "words", "title_hi": "मात्रा बताने वाले शब्द", "title_en": "Quantity Words", "items": [
+    ["दर्जन", "Dozen", "डज़न"], ["जोड़ा", "Pair", "पेयर"], ["आधा", "Half", "हाफ़"], ["चौथाई", "Quarter", "क्वार्टर"], ["दोगुना", "Double", "डबल"],
+    ["तिगुना", "Triple", "ट्रिपल"], ["मुट्ठी भर", "Handful", "हैंडफ़ुल"], ["चुटकी भर", "Pinch", "पिंच"], ["ढेर", "Pile", "पाइल"], ["पूरा", "Whole", "होल"]]},
+  {"type": "words", "title_hi": "त्योहार के शब्द", "title_en": "Festival Words", "items": [
+    ["त्योहार", "Festival", "फ़ेस्टिवल"], ["पटाखे", "Firecrackers", "फ़ायरक्रैकर्स"], ["दीया", "Earthen lamp", "अर्थन लैम्प"], ["उपहार", "Gift", "गिफ़्ट"], ["पूजा", "Worship", "वर्शिप"],
+    ["व्रत", "Fast", "फ़ास्ट"], ["आतिशबाज़ी", "Fireworks", "फ़ायरवर्क्स"], ["सजावट", "Decoration", "डेकोरेशन"], ["मेला", "Fair", "फ़ेयर"], ["जुलूस", "Procession", "प्रोसेशन"]]},
+  {"type": "sentences", "title_hi": "पड़ोसियों से बात", "title_en": "With Neighbours", "items": [
+    ["हम आपके नए पड़ोसी हैं।", "We are your new neighbours."], ["गाड़ी ज़रा साइड में लगा लीजिए।", "Please park your car to one side."],
+    ["क्या आज आपके यहाँ पानी आया?", "Did you get water today?"], ["बिजली कब तक आएगी?", "When will the power come back?"],
+    ["हम दो दिन के लिए बाहर जा रहे हैं।", "We are going away for two days."], ["ज़रा हमारे घर का ध्यान रखिएगा।", "Please keep an eye on our house."],
+    ["म्यूज़िक की आवाज़ थोड़ी कम कर दीजिए।", "Please lower the music a little."], ["कोई ज़रूरत हो तो बता दीजिएगा।", "Let me know if you need anything."]]},
+  {"type": "words", "title_hi": "दिशा और जगह", "title_en": "Direction Words", "items": [
+    ["उत्तर", "North", "नॉर्थ"], ["दक्षिण", "South", "साउथ"], ["पूरब", "East", "ईस्ट"], ["पश्चिम", "West", "वेस्ट"], ["बाएँ", "Left", "लेफ़्ट"],
+    ["दाएँ", "Right", "राइट"], ["सामने", "In front", "इन फ़्रंट"], ["पीछे", "Behind", "बिहाइंड"], ["पास में", "Nearby", "नियरबाय"], ["बीच में", "In the middle", "इन द मिडल"]]},
+  {"type": "words", "title_hi": "जंगली जानवर", "title_en": "Wild Animals", "items": [
+    ["शेर", "Lion", "लायन"], ["बाघ", "Tiger", "टाइगर"], ["हाथी", "Elephant", "एलिफ़ेंट"], ["भेड़िया", "Wolf", "वुल्फ़"], ["गीदड़", "Jackal", "जैकल"],
+    ["तेंदुआ", "Leopard", "लेपर्ड"], ["बंदर", "Monkey", "मंकी"], ["लकड़बग्घा", "Hyena", "हाइईना"], ["साँप", "Snake", "स्नेक"], ["नेवला", "Mongoose", "मॉन्गूस"]]},
+  {"type": "sentences", "title_hi": "सलाह देना", "title_en": "Giving Advice", "items": [
+    ["तुम्हें आराम करना चाहिए।", "You should take some rest."], ["इतनी चिंता मत करो।", "Don't worry so much."],
+    ["पहले डॉक्टर को दिखा लो।", "See a doctor first."], ["पैसे सोच-समझकर ख़र्च करो।", "Spend your money wisely."],
+    ["पहले अच्छे से सोच लो।", "Think carefully first."], ["एक बार और कोशिश करो।", "Give it another try."],
+    ["समय बर्बाद मत करो।", "Don't waste your time."], ["तुम्हें जल्दी सोना चाहिए।", "You should sleep early."]]},
+  {"type": "words", "title_hi": "परीक्षा के शब्द", "title_en": "Exam Words", "items": [
+    ["परीक्षा", "Exam", "एग्ज़ाम"], ["प्रश्न", "Question", "क्वेश्चन"], ["उत्तर", "Answer", "आंसर"], ["अंक", "Marks", "मार्क्स"], ["परिणाम", "Result", "रिज़ल्ट"],
+    ["उत्तीर्ण", "Pass", "पास"], ["अनुत्तीर्ण", "Fail", "फ़ेल"], ["नक़ल", "Cheating", "चीटिंग"], ["प्रवेश पत्र", "Admit card", "एडमिट कार्ड"], ["छात्रवृत्ति", "Scholarship", "स्कॉलरशिप"]]},
+  {"type": "words", "title_hi": "चलने-फिरने के Verbs", "title_en": "Movement Verbs", "items": [
+    ["दौड़ना", "Run", "रन"], ["कूदना", "Jump", "जम्प"], ["चढ़ना", "Climb", "क्लाइम"], ["गिरना", "Fall", "फ़ॉल"], ["फिसलना", "Slip", "स्लिप"],
+    ["रेंगना", "Crawl", "क्रॉल"], ["झुकना", "Bend", "बेंड"], ["धकेलना", "Push", "पुश"], ["खींचना", "Pull", "पुल"], ["फेंकना", "Throw", "थ्रो"]]},
+  {"type": "sentences", "title_hi": "सहमति और असहमति", "title_en": "Agree & Disagree", "items": [
+    ["मैं आपसे सहमत हूँ।", "I agree with you."], ["आप बिल्कुल सही कह रहे हैं।", "You are absolutely right."],
+    ["मैं इससे सहमत नहीं हूँ।", "I don't agree with this."], ["मुझे ऐसा नहीं लगता।", "I don't think so."],
+    ["आपकी बात में दम है।", "You have a point."], ["यह अच्छा आइडिया है।", "That's a good idea."],
+    ["मैं इसके बारे में सोचूँगा।", "I will think about it."], ["मुझे लगता है आप ग़लत हैं।", "I think you are wrong."]]},
+  {"type": "words", "title_hi": "काग़ज़ात के नाम", "title_en": "Documents", "items": [
+    ["पहचान पत्र", "Identity card", "आइडेंटिटी कार्ड"], ["अंकतालिका", "Marksheet", "मार्कशीट"], ["शपथ पत्र", "Affidavit", "ऐफ़िडेविट"], ["बीमा", "Insurance", "इंश्योरेंस"], ["मतदाता पहचान पत्र", "Voter ID", "वोटर आईडी"],
+    ["वसीयत", "Will", "विल"], ["जन्म प्रमाण पत्र", "Birth certificate", "बर्थ सर्टिफ़िकेट"], ["आवेदन पत्र", "Application form", "ऐप्लिकेशन फ़ॉर्म"], ["किरायानामा", "Rent agreement", "रेंट एग्रीमेंट"], ["अनुबंध", "Contract", "कॉन्ट्रैक्ट"]]},
+  {"type": "words", "title_hi": "पेड़-पौधों के हिस्से", "title_en": "Parts of a Plant", "items": [
+    ["पत्ता", "Leaf", "लीफ़"], ["जड़", "Root", "रूट"], ["तना", "Stem", "स्टेम"], ["शाखा", "Branch", "ब्रांच"], ["छाल", "Bark", "बार्क"],
+    ["कली", "Bud", "बड"], ["काँटा", "Thorn", "थॉर्न"], ["घास", "Grass", "ग्रास"], ["झाड़ी", "Bush", "बुश"], ["बेल", "Vine", "वाइन"]]},
+  {"type": "sentences", "title_hi": "अपना परिचय", "title_en": "Introducing Yourself", "items": [
+    ["मेरा नाम अमित है।", "My name is Amit."], ["मैं दिल्ली से हूँ।", "I am from Delhi."],
+    ["मैं एक छोटी कंपनी में काम करता हूँ।", "I work in a small company."], ["मैं अभी पढ़ाई कर रहा हूँ।", "I am a student."],
+    ["मेरे परिवार में चार लोग हैं।", "There are four people in my family."], ["मुझे किताबें पढ़ने का शौक़ है।", "I love reading books."],
+    ["मैं आजकल English सीख रहा हूँ।", "I am learning English these days."], ["आपसे मिलकर ख़ुशी हुई।", "Nice to meet you."]]},
+  {"type": "words", "title_hi": "अंतरिक्ष के शब्द", "title_en": "Space Words", "items": [
+    ["सूरज", "Sun", "सन"], ["चाँद", "Moon", "मून"], ["तारा", "Star", "स्टार"], ["ग्रह", "Planet", "प्लैनेट"], ["पृथ्वी", "Earth", "अर्थ"],
+    ["उपग्रह", "Satellite", "सैटेलाइट"], ["आकाशगंगा", "Galaxy", "गैलेक्सी"], ["अंतरिक्ष यात्री", "Astronaut", "ऐस्ट्रोनॉट"], ["ग्रहण", "Eclipse", "इक्लिप्स"], ["धूमकेतु", "Comet", "कॉमेट"]]},
+  {"type": "words", "title_hi": "और Phrasal Verbs", "title_en": "More Phrasal Verbs", "items": [
+    ["उतारना", "Take off", "टेक ऑफ़"], ["पहनना", "Put on", "पुट ऑन"], ["चालू करना", "Turn on", "टर्न ऑन"], ["भरना", "Fill in", "फ़िल इन"], ["लौटाना", "Give back", "गिव बैक"],
+    ["ख़राब हो जाना", "Break down", "ब्रेक डाउन"], ["सावधान रहना", "Watch out", "वॉच आउट"], ["बीमारी से उबरना", "Get over", "गेट ओवर"], ["मना कर देना", "Turn down", "टर्न डाउन"], ["मिलकर रहना", "Get along", "गेट अलॉन्ग"]]},
+  {"type": "sentences", "title_hi": "बधाई और शुभकामनाएँ", "title_en": "Wishes & Greetings", "items": [
+    ["जन्मदिन मुबारक हो!", "Happy birthday!"], ["दिवाली की शुभकामनाएँ!", "Happy Diwali!"],
+    ["नया साल मुबारक हो!", "Happy New Year!"], ["शादी की बहुत-बहुत बधाई!", "Congratulations on your wedding!"],
+    ["जल्दी ठीक हो जाओ।", "Get well soon."], ["आपका सफ़र सुरक्षित रहे।", "Have a safe journey."],
+    ["परीक्षा के लिए शुभकामनाएँ।", "All the best for your exam."], ["नई नौकरी के लिए बधाई!", "Congratulations on your new job!"]]},
+  {"type": "words", "title_hi": "प्राकृतिक आपदाएँ", "title_en": "Natural Disasters", "items": [
+    ["भूकंप", "Earthquake", "अर्थक्वेक"], ["बाढ़", "Flood", "फ़्लड"], ["सूखा", "Drought", "ड्राउट"], ["ज्वालामुखी", "Volcano", "वॉल्केनो"], ["चक्रवात", "Cyclone", "साइक्लोन"],
+    ["सुनामी", "Tsunami", "सुनामी"], ["भूस्खलन", "Landslide", "लैंडस्लाइड"], ["लू", "Heatwave", "हीटवेव"], ["बवंडर", "Tornado", "टॉरनेडो"], ["हिमस्खलन", "Avalanche", "ऐवलांच"]]},
+  {"type": "words", "title_hi": "पढ़ाई के विषय", "title_en": "School Subjects", "items": [
+    ["गणित", "Mathematics", "मैथमैटिक्स"], ["विज्ञान", "Science", "साइंस"], ["इतिहास", "History", "हिस्ट्री"], ["भूगोल", "Geography", "जियोग्राफ़ी"], ["अर्थशास्त्र", "Economics", "इकोनॉमिक्स"],
+    ["भौतिकी", "Physics", "फ़िज़िक्स"], ["रसायन विज्ञान", "Chemistry", "केमिस्ट्री"], ["जीव विज्ञान", "Biology", "बायोलॉजी"], ["नागरिक शास्त्र", "Civics", "सिविक्स"], ["साहित्य", "Literature", "लिटरेचर"]]},
+  {"type": "sentences", "title_hi": "हौसला बढ़ाना", "title_en": "Encouraging Someone", "items": [
+    ["तुम कर सकते हो।", "You can do it."], ["हिम्मत मत हारो।", "Don't give up."],
+    ["सब ठीक हो जाएगा।", "Everything will be fine."], ["मुझे तुम पर भरोसा है।", "I believe in you."],
+    ["कोशिश करते रहो।", "Keep trying."], ["एक हार से कुछ नहीं होता।", "One failure means nothing."],
+    ["तुम अकेले नहीं हो।", "You are not alone."], ["अगली बार तुम ज़रूर जीतोगे।", "You will surely win next time."]]},
+  {"type": "words", "title_hi": "धातु और सामग्री", "title_en": "Metals & Materials", "items": [
+    ["सोना", "Gold", "गोल्ड"], ["चाँदी", "Silver", "सिल्वर"], ["ताँबा", "Copper", "कॉपर"], ["पीतल", "Brass", "ब्रास"], ["इस्पात", "Steel", "स्टील"],
+    ["कोयला", "Coal", "कोल"], ["रेशम", "Silk", "सिल्क"], ["ऊन", "Wool", "वूल"], ["चमड़ा", "Leather", "लेदर"], ["काँच", "Glass", "ग्लास"]]},
+  {"type": "words", "title_hi": "English के मुहावरे", "title_en": "English Idioms", "items": [
+    ["बहुत आसान काम", "Piece of cake", "पीस ऑफ़ केक"], ["राज़ खोल देना", "Spill the beans", "स्पिल द बीन्स"], ["बातचीत शुरू करना", "Break the ice", "ब्रेक द आइस"], ["सोने जाना", "Hit the sack", "हिट द सैक"], ["बहुत ख़ुश होना", "On cloud nine", "ऑन क्लाउड नाइन"],
+    ["बहुत सस्ता", "Dirt cheap", "डर्ट चीप"], ["कभी-कभार", "Once in a blue moon", "वन्स इन अ ब्लू मून"], ["तबीयत ठीक न होना", "Under the weather", "अंडर द वेदर"], ["मुसीबत में होना", "In hot water", "इन हॉट वॉटर"], ["डटे रहना", "Hang in there", "हैंग इन देयर"]]},
+  {"type": "sentences", "title_hi": "गर्मी के मौसम में", "title_en": "Summer Sentences", "items": [
+    ["आज बहुत गर्मी है।", "It's very hot today."], ["पंखा तेज़ कर दो।", "Turn up the fan."],
+    ["मुझे बहुत प्यास लगी है।", "I am very thirsty."], ["धूप में बाहर मत जाओ।", "Don't go out in the sun."],
+    ["ख़ूब पानी पिया करो।", "Drink plenty of water."], ["बिजली फिर चली गई।", "The power went out again."],
+    ["ठंडा पानी मिलेगा?", "Can I get cold water?"], ["मुझे आइसक्रीम खानी है।", "I want to eat ice cream."]]},
+  {"type": "words", "title_hi": "बच्चों के खेल-खिलौने", "title_en": "Games & Toys", "items": [
+    ["शतरंज", "Chess", "चेस"], ["ताश", "Playing cards", "प्लेइंग कार्ड्स"], ["लुका-छिपी", "Hide and seek", "हाइड ऐंड सीक"], ["पतंगबाज़ी", "Kite flying", "काइट फ़्लाइंग"], ["झूला", "Swing", "स्विंग"],
+    ["फिसलपट्टी", "Slide", "स्लाइड"], ["कंचे", "Marbles", "मार्बल्स"], ["गुड़िया", "Doll", "डॉल"], ["गुब्बारा", "Balloon", "बलून"], ["रस्साकशी", "Tug of war", "टग ऑफ़ वॉर"]]},
+  {"type": "words", "title_hi": "नौकरियों के नाम", "title_en": "Job Titles", "items": [
+    ["रसोइया", "Chef", "शेफ़"], ["अभियंता", "Engineer", "इंजीनियर"], ["पत्रकार", "Journalist", "जर्नलिस्ट"], ["वैज्ञानिक", "Scientist", "साइंटिस्ट"], ["सैनिक", "Soldier", "सोल्जर"],
+    ["डाकिया", "Postman", "पोस्टमैन"], ["चौकीदार", "Watchman", "वॉचमैन"], ["राजमिस्त्री", "Mason", "मेसन"], ["मछुआरा", "Fisherman", "फ़िशरमैन"], ["अनुवादक", "Translator", "ट्रांसलेटर"]]},
+  {"type": "sentences", "title_hi": "सैलून में", "title_en": "At the Salon", "items": [
+    ["मुझे बाल कटवाने हैं।", "I want a haircut."], ["बाल ज़्यादा छोटे मत कीजिए।", "Don't cut my hair too short."],
+    ["सिर्फ़ साइड से थोड़ा काट दीजिए।", "Just trim the sides."], ["दाढ़ी भी बना दीजिए।", "Please shave my beard too."],
+    ["मेरे बाल बहुत झड़ रहे हैं।", "My hair is falling out a lot."], ["कितना समय लगेगा?", "How long will it take?"],
+    ["यह स्टाइल मुझ पर अच्छा लगेगा?", "Will this style suit me?"], ["मुझे बाल रंगवाने हैं।", "I want to get my hair coloured."]]},
+  {"type": "words", "title_hi": "लोग और उम्र", "title_en": "People & Ages", "items": [
+    ["शिशु", "Infant", "इन्फ़ेंट"], ["बचपन", "Childhood", "चाइल्डहुड"], ["किशोर", "Teenager", "टीनएजर"], ["जवानी", "Youth", "यूथ"], ["बुढ़ापा", "Old age", "ओल्ड एज"],
+    ["बुज़ुर्ग", "Elderly", "एल्डर्ली"], ["पड़ोसी", "Neighbour", "नेबर"], ["अजनबी", "Stranger", "स्ट्रेंजर"], ["जुड़वाँ", "Twins", "ट्विन्स"], ["अनाथ", "Orphan", "ऑर्फ़न"]]},
+  {"type": "words", "title_hi": "पालतू और खेत के जानवर", "title_en": "Farm & Pet Animals", "items": [
+    ["गाय", "Cow", "काउ"], ["भैंस", "Buffalo", "बफ़ेलो"], ["बैल", "Ox", "ऑक्स"], ["घोड़ा", "Horse", "हॉर्स"], ["मुर्गा", "Rooster", "रूस्टर"],
+    ["मुर्गी", "Hen", "हेन"], ["सूअर", "Pig", "पिग"], ["कुत्ता", "Dog", "डॉग"], ["बिल्ली", "Cat", "कैट"], ["खच्चर", "Mule", "म्यूल"]]},
+  {"type": "sentences", "title_hi": "मोबाइल की दिक्कतें", "title_en": "Phone Problems", "items": [
+    ["मेरा फ़ोन हैंग हो रहा है।", "My phone keeps hanging."], ["बैटरी जल्दी ख़त्म हो जाती है।", "The battery drains quickly."],
+    ["इंटरनेट बहुत धीमा चल रहा है।", "The internet is very slow."], ["मेरा रिचार्ज ख़त्म हो गया है।", "My recharge has run out."],
+    ["स्क्रीन टूट गई है।", "The screen is broken."], ["मैं पासवर्ड भूल गया हूँ।", "I forgot my password."],
+    ["फ़ोटो डिलीट हो गई।", "The photo got deleted."], ["मेरा फ़ोन खो गया है।", "I have lost my phone."]]},
+  {"type": "words", "title_hi": "शौक़ के नाम", "title_en": "Hobbies", "items": [
+    ["बाग़बानी", "Gardening", "गार्डनिंग"], ["चित्रकारी", "Painting", "पेंटिंग"], ["गाना", "Singing", "सिंगिंग"], ["नाचना", "Dancing", "डांसिंग"], ["सिलाई", "Sewing", "सोइंग"],
+    ["लेखन", "Writing", "राइटिंग"], ["बुनाई", "Knitting", "निटिंग"], ["मछली पकड़ना", "Fishing", "फ़िशिंग"], ["फ़ोटो खींचना", "Photography", "फ़ोटोग्राफ़ी"], ["कढ़ाई", "Embroidery", "एम्ब्रॉइडरी"]]},
+  {"type": "words", "title_hi": "रोज़ के Adverbs", "title_en": "Common Adverbs", "items": [
+    ["जल्दी", "Quickly", "क्विकली"], ["धीरे", "Slowly", "स्लोली"], ["अचानक", "Suddenly", "सडनली"], ["शायद", "Maybe", "मेबी"], ["ज़रूर", "Surely", "श्योरली"],
+    ["हमेशा", "Always", "ऑलवेज़"], ["कभी नहीं", "Never", "नेवर"], ["अक्सर", "Often", "ऑफ़न"], ["लगभग", "Almost", "ऑल्मोस्ट"], ["बिल्कुल", "Absolutely", "ऐब्सोल्यूटली"]]},
+  {"type": "sentences", "title_hi": "घर किराए पर लेना", "title_en": "Renting a House", "items": [
+    ["क्या यहाँ कोई घर किराए पर मिलेगा?", "Is any house available for rent here?"], ["किराया कितना है?", "What is the rent?"],
+    ["क्या बिजली का बिल अलग है?", "Is the electricity bill separate?"], ["सिक्योरिटी डिपॉज़िट कितना देना होगा?", "How much is the security deposit?"],
+    ["पानी कितने बजे आता है?", "What time does the water come?"], ["क्या मैं कमरा देख सकता हूँ?", "Can I see the room?"],
+    ["हम अगले महीने शिफ़्ट होंगे।", "We will move in next month."], ["क्या यहाँ पार्किंग है?", "Is there parking here?"]]},
+  {"type": "words", "title_hi": "रसोई का और सामान", "title_en": "More Kitchen Items", "items": [
+    ["चम्मच", "Spoon", "स्पून"], ["काँटा", "Fork", "फ़ोर्क"], ["चूल्हा", "Stove", "स्टोव"], ["ओखली", "Mortar", "मॉर्टर"], ["मूसल", "Pestle", "पेसल"],
+    ["भगोना", "Saucepan", "सॉसपैन"], ["जग", "Jug", "जग"], ["डिब्बा", "Container", "कंटेनर"], ["कद्दूकस", "Grater", "ग्रेटर"], ["तराज़ू", "Weighing scale", "वेइंग स्केल"]]},
+  {"type": "words", "title_hi": "दिन और ऋतुएँ", "title_en": "Days & Seasons", "items": [
+    ["बुधवार", "Wednesday", "वेन्ज़डे"], ["गुरुवार", "Thursday", "थर्ज़डे"], ["शनिवार", "Saturday", "सैटरडे"], ["वसंत", "Spring", "स्प्रिंग"], ["गर्मी", "Summer", "समर"],
+    ["बरसात", "Monsoon", "मॉनसून"], ["पतझड़", "Autumn", "ऑटम"], ["सर्दी", "Winter", "विंटर"], ["आने वाला परसों", "Day after tomorrow", "डे आफ़्टर टुमॉरो"], ["बीता हुआ कल", "Yesterday", "येस्टरडे"]]},
+  {"type": "sentences", "title_hi": "फ़िटनेस के वाक्य", "title_en": "Fitness Sentences", "items": [
+    ["मैं रोज़ सुबह टहलने जाता हूँ।", "I go for a walk every morning."], ["मुझे वज़न कम करना है।", "I want to lose weight."],
+    ["मैंने जिम जॉइन किया है।", "I have joined a gym."], ["थोड़ा स्ट्रेच कर लो।", "Do some stretching."],
+    ["मैं बहुत थक गया हूँ।", "I am very tired."], ["मैं मीठा कम खाता हूँ।", "I eat less sugar."],
+    ["योग से मन शांत रहता है।", "Yoga keeps the mind calm."], ["मैं रोज़ व्यायाम करता हूँ।", "I exercise every day."]]}
 ]
