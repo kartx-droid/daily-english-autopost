@@ -1,5 +1,5 @@
 {
-  "next_index": 10,
+  "next_index": 11,
   "history": [
     {
       "post": 1,
@@ -116,6 +116,13 @@
       "media_id": "17911987194664936",
       "posted_at": "2026-11-08T13:50:08+05:30",
       "hook": "question"
+    },
+    {
+      "post": 11,
+      "type": "carousel",
+      "title": "भावनाएँ",
+      "media_id": "18139526242654904",
+      "posted_at": "2026-11-08T19:41:49+05:30"
     }
   ]
 }
