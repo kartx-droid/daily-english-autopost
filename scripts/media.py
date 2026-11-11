@@ -69,6 +69,8 @@ def hint(text):
 
 def fill(template, values):
     page = (TEMPLATES / template).read_text(encoding="utf-8")
+    # The font ships with the repo, so rendering needs no network and no system font packages.
+    values = {"FONT_URL": (TEMPLATES / "fonts" / "Baloo2-wght.ttf").as_uri(), **values}
     for key, value in values.items():
         page = page.replace("{{" + key + "}}", value)
     return page

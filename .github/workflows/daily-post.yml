@@ -39,11 +39,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      # No apt-get and no browser download: the runner's preinstalled Google Chrome renders the
+      # pages and the font ships in template/fonts. (The apt/browser install failed on 11 Nov.)
       - name: Install dependencies
         run: |
-          sudo apt-get update -q && sudo apt-get install -yq fonts-noto-core
           pip install -r requirements.txt
-          python -m playwright install --with-deps chromium
+          if command -v google-chrome >/dev/null; then
+            echo "PLAYWRIGHT_CHANNEL=chrome" >> "$GITHUB_ENV"
+          else
+            python -m playwright install --with-deps chromium
+          fi
 
       - name: Check Instagram token
         env:
