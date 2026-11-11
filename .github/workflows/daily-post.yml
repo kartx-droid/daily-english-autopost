@@ -25,7 +25,8 @@ concurrency:
 
 jobs:
   post:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moved to Ubuntu 26, where installing Playwright's browser failed.
+    runs-on: ubuntu-24.04
     env:
       # Scheduled runs have no inputs, so they always post for real.
       DRY_RUN: ${{ inputs.dry_run == true }}
