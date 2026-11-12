@@ -1,5 +1,5 @@
 {
-  "next_index": 17,
+  "next_index": 18,
   "history": [
     {
       "post": 1,
@@ -169,6 +169,13 @@
       "media_id": "18133612321693014",
       "posted_at": "2026-11-12T14:04:51+05:30",
       "hook": "score"
+    },
+    {
+      "post": 18,
+      "type": "carousel",
+      "title": "फ़ोन पर बात",
+      "media_id": "18121344056318215",
+      "posted_at": "2026-11-12T20:00:54+05:30"
     }
   ]
 }
