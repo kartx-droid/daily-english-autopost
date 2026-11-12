@@ -1,5 +1,5 @@
 {
-  "next_index": 16,
+  "next_index": 17,
   "history": [
     {
       "post": 1,
@@ -161,6 +161,14 @@
       "media_id": "18122976562993000",
       "posted_at": "2026-11-11T20:31:23+05:30",
       "hook": "question"
+    },
+    {
+      "post": 17,
+      "type": "reel",
+      "title": "ख़रीदारी के शब्द",
+      "media_id": "18133612321693014",
+      "posted_at": "2026-11-12T14:04:51+05:30",
+      "hook": "score"
     }
   ]
 }
